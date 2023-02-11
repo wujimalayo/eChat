@@ -12058,6 +12058,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sass-resources-loader@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "sass-resources-loader@npm:2.2.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fsass-resources-loader%2F-%2Fsass-resources-loader-2.2.5.tgz"
+  dependencies:
+    async: ^3.2.3
+    chalk: ^4.1.0
+    glob: ^7.1.6
+    loader-utils: ^2.0.0
+  checksum: 7b406e7b31abd053c4a3a87825bbb20cdf89a5f7e189a4d9cd0607a3e35c1e48a6a680336a34ff842ae71e7f67d95b942bba98cfb2ccb836e98f8e1e371c534c
+  languageName: node
+  linkType: hard
+
 "sax@npm:~1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
@@ -13119,6 +13131,7 @@ __metadata:
     resolve-url-loader: ^4.0.0
     rsuite: ^5.26.1
     sass-loader: ^12.3.0
+    sass-resources-loader: ^2.2.5
     semver: ^7.3.5
     source-map-loader: ^3.0.0
     style-loader: ^3.3.1

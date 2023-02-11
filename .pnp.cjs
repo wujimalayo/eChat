@@ -76,6 +76,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve-url-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:4.0.0"],\
             ["rsuite", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:5.26.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Frsuite%2F-%2Frsuite-5.26.1.tgz"],\
             ["sass-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:12.6.0"],\
+            ["sass-resources-loader", "npm:2.2.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fsass-resources-loader%2F-%2Fsass-resources-loader-2.2.5.tgz"],\
             ["semver", "npm:7.3.8"],\
             ["source-map-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.0.2"],\
             ["style-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.3.1"],\
@@ -16276,6 +16277,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["sass-resources-loader", [\
+        ["npm:2.2.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fsass-resources-loader%2F-%2Fsass-resources-loader-2.2.5.tgz", {\
+          "packageLocation": "./.yarn/cache/sass-resources-loader-npm-2.2.5-807ba920d1-7b406e7b31.zip/node_modules/sass-resources-loader/",\
+          "packageDependencies": [\
+            ["sass-resources-loader", "npm:2.2.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fsass-resources-loader%2F-%2Fsass-resources-loader-2.2.5.tgz"],\
+            ["async", "npm:3.2.4"],\
+            ["chalk", "npm:4.1.2"],\
+            ["glob", "npm:7.2.3"],\
+            ["loader-utils", "npm:2.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["sax", [\
         ["npm:1.2.4", {\
           "packageLocation": "./.yarn/cache/sax-npm-1.2.4-178f05f12f-d3df7d32b8.zip/node_modules/sax/",\
@@ -17469,6 +17483,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["resolve-url-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:4.0.0"],\
             ["rsuite", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:5.26.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Frsuite%2F-%2Frsuite-5.26.1.tgz"],\
             ["sass-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:12.6.0"],\
+            ["sass-resources-loader", "npm:2.2.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fsass-resources-loader%2F-%2Fsass-resources-loader-2.2.5.tgz"],\
             ["semver", "npm:7.3.8"],\
             ["source-map-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.0.2"],\
             ["style-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.3.1"],\
