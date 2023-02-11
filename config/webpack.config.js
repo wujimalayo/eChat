@@ -323,6 +323,9 @@ module.exports = function (webpackEnv) {
           "scheduler/tracing": "scheduler/tracing-profiling",
         }),
         ...(modules.webpackAliases || {}),
+        src: path.join(__dirname, "../src/"),
+        pages: path.join(__dirname, "../src/pages/"),
+        components: path.join(__dirname, "../src/components/"),
       },
       plugins: [
         // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -517,9 +520,7 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
-                  modules: {
-                    mode: "icss",
-                  },
+                  modules: true,
                 },
                 "sass-loader"
               ),
