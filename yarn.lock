@@ -1458,6 +1458,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.16.0, @babel/runtime@npm:^7.20.0, @babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.20.13":
+  version: 7.20.13
+  resolution: "@babel/runtime@npm:7.20.13::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.20.13.tgz"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 09b7a97a05c80540db6c9e4ddf8c5d2ebb06cae5caf3a87e33c33f27f8c4d49d9c67a2d72f1570e796045288fad569f98a26ceba0c4f5fad2af84b6ad855c4fb
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
@@ -2101,6 +2110,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@juggle/resize-observer@npm:^3.3.1, @juggle/resize-observer@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@juggle/resize-observer@npm:3.4.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40juggle%2Fresize-observer%2F-%2Fresize-observer-3.4.0.tgz"
+  checksum: 2505028c05cc2e17639fcad06218b1c4b60f932a4ebb4b41ab546ef8c157031ae377e3f560903801f6d01706dbefd4943b6c4704bf19ed86dfa1c62f1473a570
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.4
   resolution: "@leichtgewicht/ip-codec@npm:2.0.4"
@@ -2258,6 +2274,28 @@ __metadata:
   peerDependencies:
     rollup: ^1.20.0||^2.0.0
   checksum: 8be16e27863c219edbb25a4e6ec2fe0e1e451d9e917b6a43cf2ae5bc025a6b8faaa40f82a6e53b66d0de37b58ff472c6c3d57a83037ae635041f8df959d6d9aa
+  languageName: node
+  linkType: hard
+
+"@rsuite/icon-font@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@rsuite/icon-font@npm:4.0.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40rsuite%2Ficon-font%2F-%2Ficon-font-4.0.0.tgz"
+  checksum: c4ae583653b9333d5bef7174180f5c8cce216e79cd412dc6a0c0b4d1559a4d7fae83448a218d2e0e37f02a5c871a01933e2757a5ffecd8d925ececcea62467f4
+  languageName: node
+  linkType: hard
+
+"@rsuite/icons@npm:^1.0.0, @rsuite/icons@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@rsuite/icons@npm:1.0.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40rsuite%2Ficons%2F-%2Ficons-1.0.2.tgz"
+  dependencies:
+    "@rsuite/icon-font": ^4.0.0
+    classnames: ^2.2.5
+    insert-css: ^2.0.0
+    lodash: ^4.17.20
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: b90826f88811c002ac6a5d676d426c4bca0c50151a287f4fb4e5bcb5d825138c9f93d9f2e60e121803c57de78a03a97daa94028b8e17174ee8f46d66f74d57b9
   languageName: node
   linkType: hard
 
@@ -2589,6 +2627,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/chai@npm:^4.3.3":
+  version: 4.3.4
+  resolution: "@types/chai@npm:4.3.4::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fchai%2F-%2Fchai-4.3.4.tgz"
+  checksum: 571184967beb03bf64c4392a13a7d44e72da9af5a1e83077ff81c39cf59c0fda2a5c78d2005084601cf8f3d11726608574d8b5b4a0e3e9736792807afd926cd0
+  languageName: node
+  linkType: hard
+
 "@types/connect-history-api-fallback@npm:^1.3.5":
   version: 1.3.5
   resolution: "@types/connect-history-api-fallback@npm:1.3.5"
@@ -2746,6 +2791,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.14.184":
+  version: 4.14.191
+  resolution: "@types/lodash@npm:4.14.191::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Flodash%2F-%2Flodash-4.14.191.tgz"
+  checksum: ba0d5434e10690869f32d5ea49095250157cae502f10d57de0a723fd72229ce6c6a4979576f0f13e0aa9fbe3ce2457bfb9fa7d4ec3d6daba56730a51906d1491
+  languageName: node
+  linkType: hard
+
 "@types/mime@npm:*":
   version: 3.0.1
   resolution: "@types/mime@npm:3.0.1"
@@ -2781,6 +2833,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:^15.7.5":
+  version: 15.7.5
+  resolution: "@types/prop-types@npm:15.7.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fprop-types%2F-%2Fprop-types-15.7.5.tgz"
+  checksum: 5b43b8b15415e1f298243165f1d44390403bb2bd42e662bca3b5b5633fdd39c938e91b7fce3a9483699db0f7a715d08cef220c121f723a634972fdf596aec980
+  languageName: node
+  linkType: hard
+
 "@types/q@npm:^1.5.1":
   version: 1.5.5
   resolution: "@types/q@npm:1.5.5"
@@ -2808,6 +2867,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: ff8282d5005a0b1cd95fb65bf79d3d8485e4cfe2aaf052129033a178684b940014a3f4536bc20d573f8a01cf4c6f4770c74988cef7c2b5cac3041d9f172647e3
+  languageName: node
+  linkType: hard
+
+"@types/react-window@npm:^1.8.5":
+  version: 1.8.5
+  resolution: "@types/react-window@npm:1.8.5::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Freact-window%2F-%2Freact-window-1.8.5.tgz"
+  dependencies:
+    "@types/react": "*"
+  checksum: 5f519e1402300d11b6e6595223feb6499f3227e38da166cbc565773cd7f71862abcf855b7835d391b5119fcfacdfba79d73a965b45f60a293fc1ff25986319ed
   languageName: node
   linkType: hard
 
@@ -4253,6 +4321,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.5, classnames@npm:^2.3.1":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclassnames%2F-%2Fclassnames-2.3.2.tgz"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:^5.2.2":
   version: 5.3.2
   resolution: "clean-css@npm:5.3.2"
@@ -4870,6 +4945,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^2.29.3":
+  version: 2.29.3
+  resolution: "date-fns@npm:2.29.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fdate-fns%2F-%2Fdate-fns-2.29.3.tgz"
+  checksum: e01cf5b62af04e05dfff921bb9c9933310ed0e1ae9a81eb8653452e64dc841acf7f6e01e1a5ae5644d0337e9a7f936175fd2cb6819dc122fdd9c5e86c56be484
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.6.0":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -5145,6 +5227,15 @@ __metadata:
   dependencies:
     utila: ~0.4
   checksum: ea52fe303f5392e48dea563abef0e6fb3a478b8dbe3c599e99bb5d53981c6c38fc4944e56bb92a8ead6bb989d10b7914722ae11febbd2fd0910e33b9fc4aaa77
+  languageName: node
+  linkType: hard
+
+"dom-lib@npm:^3.1.3":
+  version: 3.1.6
+  resolution: "dom-lib@npm:3.1.6::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fdom-lib%2F-%2Fdom-lib-3.1.6.tgz"
+  dependencies:
+    "@babel/runtime": ^7.20.0
+  checksum: f15c610abddd3ec1981a5779f3b3960a6494c8c7507d18e844801c0be312ad34c4f38859fbaf7406826a1a4404d81cd596d83b6bc29595887815db41668aa972
   languageName: node
   linkType: hard
 
@@ -6994,6 +7085,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"insert-css@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "insert-css@npm:2.0.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Finsert-css%2F-%2Finsert-css-2.0.0.tgz"
+  checksum: c510411fc2df6fd5106a3bc771417b3ea07ebfefa2c0e360b0901c37d8d3f5de7dc9a78a7c949433ac6875f661a7a6290b71f411b8594284c097fa1fa2a35a35
+  languageName: node
+  linkType: hard
+
 "internal-slot@npm:^1.0.3, internal-slot@npm:^1.0.4":
   version: 1.0.4
   resolution: "internal-slot@npm:1.0.4"
@@ -8415,6 +8513,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.17.11":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Flodash%2F-%2Flodash-4.17.21.tgz"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
+  languageName: node
+  linkType: hard
+
 "lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
@@ -8554,6 +8659,13 @@ __metadata:
   dependencies:
     fs-monkey: ^1.0.3
   checksum: 3f9717d6f060919d53f211acb6096a0ea2f566a8cbcc4ef7e1f2561e31e33dc456053fdf951c90a49c8ec55402de7f01b006b81683ab7bd4bdbbd8c9b9cdae5f
+  languageName: node
+  linkType: hard
+
+"memoize-one@npm:>=3.1.1 <6":
+  version: 5.2.1
+  resolution: "memoize-one@npm:5.2.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fmemoize-one%2F-%2Fmemoize-one-5.2.1.tgz"
+  checksum: a3cba7b824ebcf24cdfcd234aa7f86f3ad6394b8d9be4c96ff756dafb8b51c7f71320785fbc2304f1af48a0467cbbd2a409efc9333025700ed523f254cb52e3d
   languageName: node
   linkType: hard
 
@@ -8970,6 +9082,13 @@ __metadata:
   version: 2.2.2
   resolution: "nwsapi@npm:2.2.2"
   checksum: 43769106292bc95f776756ca2f3513dab7b4d506a97c67baec32406447841a35f65f29c1f95ab5d42785210fd41668beed33ca16fa058780be43b101ad73e205
+  languageName: node
+  linkType: hard
+
+"object-assign@npm:>=4.0.1":
+  version: 4.1.1
+  resolution: "object-assign@npm:4.1.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fobject-assign%2F-%2Fobject-assign-4.1.1.tgz"
+  checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
   languageName: node
   linkType: hard
 
@@ -10130,6 +10249,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-px-to-viewport@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "postcss-px-to-viewport@npm:1.1.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fpostcss-px-to-viewport%2F-%2Fpostcss-px-to-viewport-1.1.1.tgz"
+  dependencies:
+    object-assign: ">=4.0.1"
+    postcss: ">=5.0.2"
+  checksum: e85eaafef6c09201fd78c4e5f7ddebddd3502831c9d24ae1e7d42b1034c582a1ba4026bcef841215e15fdf16a44060c06a0bdd555161f01da0f5167afe43b1a3
+  languageName: node
+  linkType: hard
+
 "postcss-reduce-initial@npm:^5.1.1":
   version: 5.1.1
   resolution: "postcss-reduce-initial@npm:5.1.1"
@@ -10210,6 +10339,17 @@ __metadata:
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
   checksum: 819ffab0c9d51cf0acbabf8996dffbfafbafa57afc0e4c98db88b67f2094cb44488758f06e5da95d7036f19556a4a732525e84289a425f4f6fd8e412a9d7442f
+  languageName: node
+  linkType: hard
+
+"postcss@npm:>=5.0.2":
+  version: 8.4.21
+  resolution: "postcss@npm:8.4.21::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fpostcss%2F-%2Fpostcss-8.4.21.tgz"
+  dependencies:
+    nanoid: ^3.3.4
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: e39ac60ccd1542d4f9d93d894048aac0d686b3bb38e927d8386005718e6793dbbb46930f0a523fe382f1bbd843c6d980aaea791252bf5e176180e5a4336d9679
   languageName: node
   linkType: hard
 
@@ -10530,6 +10670,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "react-is@npm:17.0.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Freact-is%2F-%2Freact-is-17.0.2.tgz"
+  checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^18.0.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
@@ -10544,70 +10691,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-scripts@npm:5.0.1":
-  version: 5.0.1
-  resolution: "react-scripts@npm:5.0.1"
+"react-window@npm:^1.8.8":
+  version: 1.8.8
+  resolution: "react-window@npm:1.8.8::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Freact-window%2F-%2Freact-window-1.8.8.tgz"
   dependencies:
-    "@babel/core": ^7.16.0
-    "@pmmmwh/react-refresh-webpack-plugin": ^0.5.3
-    "@svgr/webpack": ^5.5.0
-    babel-jest: ^27.4.2
-    babel-loader: ^8.2.3
-    babel-plugin-named-asset-import: ^0.3.8
-    babel-preset-react-app: ^10.0.1
-    bfj: ^7.0.2
-    browserslist: ^4.18.1
-    camelcase: ^6.2.1
-    case-sensitive-paths-webpack-plugin: ^2.4.0
-    css-loader: ^6.5.1
-    css-minimizer-webpack-plugin: ^3.2.0
-    dotenv: ^10.0.0
-    dotenv-expand: ^5.1.0
-    eslint: ^8.3.0
-    eslint-config-react-app: ^7.0.1
-    eslint-webpack-plugin: ^3.1.1
-    file-loader: ^6.2.0
-    fs-extra: ^10.0.0
-    fsevents: ^2.3.2
-    html-webpack-plugin: ^5.5.0
-    identity-obj-proxy: ^3.0.0
-    jest: ^27.4.3
-    jest-resolve: ^27.4.2
-    jest-watch-typeahead: ^1.0.0
-    mini-css-extract-plugin: ^2.4.5
-    postcss: ^8.4.4
-    postcss-flexbugs-fixes: ^5.0.2
-    postcss-loader: ^6.2.1
-    postcss-normalize: ^10.0.1
-    postcss-preset-env: ^7.0.1
-    prompts: ^2.4.2
-    react-app-polyfill: ^3.0.0
-    react-dev-utils: ^12.0.1
-    react-refresh: ^0.11.0
-    resolve: ^1.20.0
-    resolve-url-loader: ^4.0.0
-    sass-loader: ^12.3.0
-    semver: ^7.3.5
-    source-map-loader: ^3.0.0
-    style-loader: ^3.3.1
-    tailwindcss: ^3.0.2
-    terser-webpack-plugin: ^5.2.5
-    webpack: ^5.64.4
-    webpack-dev-server: ^4.6.0
-    webpack-manifest-plugin: ^4.0.2
-    workbox-webpack-plugin: ^6.4.1
+    "@babel/runtime": ^7.0.0
+    memoize-one: ">=3.1.1 <6"
   peerDependencies:
-    react: ">= 16"
-    typescript: ^3.2.1 || ^4
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  bin:
-    react-scripts: bin/react-scripts.js
-  checksum: 92afa2f245c7092ccc97d5609dc7a2130616262e34da7f15072d9442e2d2e1d4909a91022abd1faac1336eb17c5525a10d9bd43e1ae374c7ec941ca20addca68
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: a19f43b9015fb84e16db983617dac618a8b298881d2ca96ffc2fb00534afd958ee57a00fd0017733b56f8c34dd84e5be59337877aed3c66329ed3b84e8d018ba
   languageName: node
   linkType: hard
 
@@ -10969,6 +11062,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rsuite-table@npm:^5.8.2":
+  version: 5.8.2
+  resolution: "rsuite-table@npm:5.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Frsuite-table%2F-%2Frsuite-table-5.8.2.tgz"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@juggle/resize-observer": ^3.3.1
+    "@rsuite/icons": ^1.0.0
+    classnames: ^2.3.1
+    dom-lib: ^3.1.3
+    lodash: ^4.17.21
+    react-is: ^17.0.2
+  peerDependencies:
+    prop-types: ^15.7.2
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 8f7aa094ca0af698f2e488d77cbcffd4b23ed2dd2ba39aa74f7278e771c1c572e9f8dc69597fa56d763a65bcc0c075e518bc8c24c232e54bb5863cb208654518
+  languageName: node
+  linkType: hard
+
+"rsuite@npm:^5.26.1":
+  version: 5.26.1
+  resolution: "rsuite@npm:5.26.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Frsuite%2F-%2Frsuite-5.26.1.tgz"
+  dependencies:
+    "@babel/runtime": ^7.20.1
+    "@juggle/resize-observer": ^3.4.0
+    "@rsuite/icons": ^1.0.2
+    "@types/chai": ^4.3.3
+    "@types/lodash": ^4.14.184
+    "@types/prop-types": ^15.7.5
+    "@types/react-window": ^1.8.5
+    classnames: ^2.3.1
+    date-fns: ^2.29.3
+    dom-lib: ^3.1.3
+    lodash: ^4.17.11
+    prop-types: ^15.8.1
+    react-window: ^1.8.8
+    rsuite-table: ^5.8.2
+    schema-typed: ^2.0.3
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 47476ef86b074c763b3e59d158628af36e948c3dd3f8ba535c383c8693f057ac32e5c06d57645cd1ade19375a77ef0dee563370e175546012186f876f992a779
+  languageName: node
+  linkType: hard
+
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
   resolution: "run-parallel@npm:1.2.0"
@@ -11064,6 +11202,15 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
+  languageName: node
+  linkType: hard
+
+"schema-typed@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "schema-typed@npm:2.0.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fschema-typed%2F-%2Fschema-typed-2.0.3.tgz"
+  dependencies:
+    "@babel/runtime": ^7.16.0
+  checksum: 890a118dc1068898e085104f3fea80fe3fbfbfdf4fda3882840e75d0dd2aa6fcf1d36860668e52c0bd07f1f6686071ef6cd700be0c6ea5952f5f402232090a42
   languageName: node
   linkType: hard
 
@@ -11911,13 +12058,63 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "test-app@workspace:."
   dependencies:
+    "@babel/core": ^7.16.0
+    "@babel/runtime": ^7.20.13
+    "@pmmmwh/react-refresh-webpack-plugin": ^0.5.3
+    "@svgr/webpack": ^5.5.0
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^13.0.0
     "@testing-library/user-event": ^13.2.1
+    babel-jest: ^27.4.2
+    babel-loader: ^8.2.3
+    babel-plugin-named-asset-import: ^0.3.8
+    babel-preset-react-app: ^10.0.1
+    bfj: ^7.0.2
+    browserslist: ^4.18.1
+    camelcase: ^6.2.1
+    case-sensitive-paths-webpack-plugin: ^2.4.0
+    css-loader: ^6.5.1
+    css-minimizer-webpack-plugin: ^3.2.0
+    dotenv: ^10.0.0
+    dotenv-expand: ^5.1.0
+    eslint: ^8.3.0
+    eslint-config-react-app: ^7.0.1
+    eslint-webpack-plugin: ^3.1.1
+    file-loader: ^6.2.0
+    fs-extra: ^10.0.0
+    html-webpack-plugin: ^5.5.0
+    identity-obj-proxy: ^3.0.0
+    jest: ^27.4.3
+    jest-resolve: ^27.4.2
+    jest-watch-typeahead: ^1.0.0
+    mini-css-extract-plugin: ^2.4.5
+    postcss: ^8.4.4
+    postcss-flexbugs-fixes: ^5.0.2
+    postcss-loader: ^6.2.1
+    postcss-normalize: ^10.0.1
+    postcss-preset-env: ^7.0.1
+    postcss-px-to-viewport: ^1.1.1
+    prompts: ^2.4.2
+    prop-types: ^15.8.1
     react: ^18.2.0
+    react-app-polyfill: ^3.0.0
+    react-dev-utils: ^12.0.1
     react-dom: ^18.2.0
-    react-scripts: 5.0.1
+    react-refresh: ^0.11.0
+    resolve: ^1.20.0
+    resolve-url-loader: ^4.0.0
+    rsuite: ^5.26.1
+    sass-loader: ^12.3.0
+    semver: ^7.3.5
+    source-map-loader: ^3.0.0
+    style-loader: ^3.3.1
+    tailwindcss: ^3.0.2
+    terser-webpack-plugin: ^5.2.5
     web-vitals: ^2.1.0
+    webpack: ^5.64.4
+    webpack-dev-server: ^4.6.0
+    webpack-manifest-plugin: ^4.0.2
+    workbox-webpack-plugin: ^6.4.1
   languageName: unknown
   linkType: soft
 
