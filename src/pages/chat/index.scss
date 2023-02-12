@@ -10,16 +10,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 8px;
-    height: 48px;
-    background-color: $light-background-color;
+    height: 40px;
+    background-color: $primary-color;
     border-bottom: 1px solid $sub-color;
-  }
-  .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: auto;
-    color: #663399;
+    color: white;
+    justify-content: center;
   }
 }

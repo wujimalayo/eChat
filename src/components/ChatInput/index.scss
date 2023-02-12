@@ -1,6 +1,60 @@
 .input-wrapper {
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; */
+  padding: 8px;
+  border-top: 1px solid $border-color;
+
+  :global {
+    .rs-input {
+      box-shadow: 0 0 transparent, 0 0 transparent, 0 0 10px rgba(0, 0, 0, 0.1);
+      &:focus {
+        border-color: rgba(0, 0, 0, 0);
+      }
+      resize: none;
+    }
+  }
+
+  .textarea {
+    min-height: 36px;
+    max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: 0;
+    border: 1px solid $border-color-light;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 4px 8px;
+    padding-right: 28px;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .send-btn {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .send {
+    position: absolute;
+    right: 17px;
+    bottom: 17px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.animation-spin {
+  animation: spin 1s infinite linear;
+}
+
+@include keyframes(spin) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
