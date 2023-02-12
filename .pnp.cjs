@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@babel/core", "npm:7.20.12"],\
             ["@babel/runtime", "npm:7.20.13::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.20.13.tgz"],\
+            ["@fingerprintjs/fingerprintjs-pro-react", "npm:2.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-react%2F-%2Ffingerprintjs-pro-react-2.2.0.tgz"],\
             ["@pmmmwh/react-refresh-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:0.5.10"],\
             ["@svgr/webpack", "npm:5.5.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
@@ -43,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["browserslist", "npm:4.21.5"],\
             ["camelcase", "npm:6.3.0"],\
             ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
+            ["classnames", "npm:2.3.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclassnames%2F-%2Fclassnames-2.3.2.tgz"],\
             ["css-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:6.7.3"],\
             ["css-minimizer-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.4.1"],\
             ["dotenv", "npm:10.0.0"],\
@@ -3277,6 +3279,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:4.1.0"],\
             ["minimatch", "npm:3.1.2"],\
             ["strip-json-comments", "npm:3.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fingerprintjs/fingerprintjs-pro", [\
+        ["npm:3.8.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro%2F-%2Ffingerprintjs-pro-3.8.1.tgz", {\
+          "packageLocation": "./.yarn/cache/@fingerprintjs-fingerprintjs-pro-npm-3.8.1-c7b482e247-9b15084ed8.zip/node_modules/@fingerprintjs/fingerprintjs-pro/",\
+          "packageDependencies": [\
+            ["@fingerprintjs/fingerprintjs-pro", "npm:3.8.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro%2F-%2Ffingerprintjs-pro-3.8.1.tgz"],\
+            ["tslib", "npm:2.5.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftslib%2F-%2Ftslib-2.5.0.tgz"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fingerprintjs/fingerprintjs-pro-react", [\
+        ["npm:2.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-react%2F-%2Ffingerprintjs-pro-react-2.2.0.tgz", {\
+          "packageLocation": "./.yarn/unplugged/@fingerprintjs-fingerprintjs-pro-react-npm-2.2.0-0865117c28/node_modules/@fingerprintjs/fingerprintjs-pro-react/",\
+          "packageDependencies": [\
+            ["@fingerprintjs/fingerprintjs-pro-react", "npm:2.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-react%2F-%2Ffingerprintjs-pro-react-2.2.0.tgz"],\
+            ["@fingerprintjs/fingerprintjs-pro-spa", "npm:0.7.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-spa%2F-%2Ffingerprintjs-pro-spa-0.7.0.tgz"],\
+            ["fast-deep-equal", "npm:3.1.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@fingerprintjs/fingerprintjs-pro-spa", [\
+        ["npm:0.7.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-spa%2F-%2Ffingerprintjs-pro-spa-0.7.0.tgz", {\
+          "packageLocation": "./.yarn/cache/@fingerprintjs-fingerprintjs-pro-spa-npm-0.7.0-c0cd116997-42d37f9808.zip/node_modules/@fingerprintjs/fingerprintjs-pro-spa/",\
+          "packageDependencies": [\
+            ["@fingerprintjs/fingerprintjs-pro-spa", "npm:0.7.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-spa%2F-%2Ffingerprintjs-pro-spa-0.7.0.tgz"],\
+            ["@fingerprintjs/fingerprintjs-pro", "npm:3.8.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro%2F-%2Ffingerprintjs-pro-3.8.1.tgz"],\
+            ["tslib", "npm:2.5.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftslib%2F-%2Ftslib-2.5.0.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17437,6 +17471,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["test-app", "workspace:."],\
             ["@babel/core", "npm:7.20.12"],\
             ["@babel/runtime", "npm:7.20.13::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.20.13.tgz"],\
+            ["@fingerprintjs/fingerprintjs-pro-react", "npm:2.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40fingerprintjs%2Ffingerprintjs-pro-react%2F-%2Ffingerprintjs-pro-react-2.2.0.tgz"],\
             ["@pmmmwh/react-refresh-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:0.5.10"],\
             ["@svgr/webpack", "npm:5.5.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
@@ -17450,6 +17485,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["browserslist", "npm:4.21.5"],\
             ["camelcase", "npm:6.3.0"],\
             ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
+            ["classnames", "npm:2.3.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclassnames%2F-%2Fclassnames-2.3.2.tgz"],\
             ["css-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:6.7.3"],\
             ["css-minimizer-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.4.1"],\
             ["dotenv", "npm:10.0.0"],\
@@ -17667,6 +17703,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tslib-npm-2.5.0-bb364efebd-ae3ed5f9ce.zip/node_modules/tslib/",\
           "packageDependencies": [\
             ["tslib", "npm:2.5.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.5.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftslib%2F-%2Ftslib-2.5.0.tgz", {\
+          "packageLocation": "./.yarn/cache/tslib-npm-2.5.0-331a88d847-ae3ed5f9ce.zip/node_modules/tslib/",\
+          "packageDependencies": [\
+            ["tslib", "npm:2.5.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftslib%2F-%2Ftslib-2.5.0.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\
