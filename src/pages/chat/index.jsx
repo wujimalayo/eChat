@@ -6,7 +6,6 @@ import { UserInfoContext } from "src/store/context";
 
 const Chat = () => {
   const userInfo = useContext(UserInfoContext);
-  console.log(userInfo);
   return (
     <div className={styles.chat}>
       <div className={styles.header}>Echat</div>
