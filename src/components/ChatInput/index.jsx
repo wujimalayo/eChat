@@ -1,34 +1,63 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import styles from "./index.scss";
 import { send_message, loading_icon } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { sendnRecieve } from "src/service/api";
-import { UserInfoContext } from "src/store/context";
+// import { UserInfoContext } from "src/store/context";
 
-const ChatInput = () => {
-  const userInfo = useContext(UserInfoContext);
+const ChatInput = ({ onAddMessage }) => {
+  // const userInfo = useContext(UserInfoContext);
   const [loading, setLoading] = useState(false);
-  const [inputValue, setInputValue] = useState("");
 
-  const handleSend = async () => {
-    if (!inputValue.trim().length) return;
+  const handleSend = async (text) => {
+    if (!text.trim().length) return;
     setLoading(true);
-    sendnRecieve({
-      device_id: userInfo.visitorId,
-      user_chat: inputValue,
-    }).then((res) => {
-      console.log(res);
-      setLoading(false);
+    onAddMessage({
+      text: text,
+      type: "send",
     });
+    const formData = new FormData();
+    formData.append("device_id", "123456");
+    formData.append("user_chat", text);
+    sendnRecieve(formData)
+      .then((res) => {
+        onAddMessage({
+          text: res.ChatGpt,
+          type: "receive",
+        });
+        setLoading(false);
+        inputRef.current;
+      })
+      .catch(() => setLoading(false));
+  };
+
+  const inputRef = useRef();
+
+  const handleInputContent = () => {
+    const text = getText(inputRef.current);
+    handleSend(text);
+  };
+
+  const getText = (ele) => {
+    let res = "";
+    Array.from(ele.childNodes).forEach((child) => {
+      if (child.nodeName === "#text") {
+        res += child.nodeValue;
+      }
+      if (child.hasChildNodes()) {
+        res += getText(child);
+      }
+    });
+    return res;
   };
 
   return (
     <div className={styles["input-wrapper"]}>
       <div
+        ref={inputRef}
         className={styles.textarea}
         suppressContentEditableWarning
         contentEditable={true}
-        onInput={(e) => setInputValue(e.target.innerHTML)}
       >
         <br />
       </div>
@@ -39,7 +68,11 @@ const ChatInput = () => {
           src={loading_icon}
         />
       ) : (
-        <img className={styles.send} src={send_message} onClick={handleSend} />
+        <img
+          className={styles.send}
+          src={send_message}
+          onClick={handleInputContent}
+        />
       )}
     </div>
   );
