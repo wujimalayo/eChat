@@ -7,15 +7,13 @@ import { FpjsProvider } from "@fingerprintjs/fingerprintjs-pro-react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <FpjsProvider
-      loadOptions={{
-        apiKey: "85s8K0T8EWbdiViAr3Th",
-      }}
-    >
-      <App />
-    </FpjsProvider>
-  </React.StrictMode>
+  <FpjsProvider
+    loadOptions={{
+      apiKey: "85s8K0T8EWbdiViAr3Th",
+    }}
+  >
+    <App />
+  </FpjsProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -9,21 +9,25 @@ const Chat = () => {
 
   const [messageList, setMessageList] = useState([
     {
-      text: "Hi，我是ChatGpt，一个聊天机器人。我可以为您提供有关世界各地的信息，帮助您更好地了解这个世界。",
+      text: `Hi，欢迎使用Echat，下方是您的设备id`,
+      type: "receive",
+    }, {
+      text: `${userInfo.visitorId}`,
       type: "receive",
     },
   ]);
-  const handleAdd = (msg) =>
-    setMessageList((list) => {
+  const handleAdd = (msg) => {
+    setMessageList(list => {
       list.push(msg);
       return [...list];
     });
+  }
 
   return (
     <div className={styles.chat}>
       <div className={styles.header}>Echat</div>
       <ChatContent messageList={messageList} />
-      <ChatInput onAddMessage={handleAdd} />
+      <ChatInput onAddMessage={msg => handleAdd(msg)} />
     </div>
   );
 };

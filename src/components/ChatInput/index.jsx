@@ -3,11 +3,12 @@ import styles from "./index.scss";
 import { send_message, loading_icon } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { sendnRecieve } from "src/service/api";
-// import { UserInfoContext } from "src/store/context";
+import { UserInfoContext } from "src/store/context";
 
 const ChatInput = ({ onAddMessage }) => {
-  // const userInfo = useContext(UserInfoContext);
+  const userInfo = useContext(UserInfoContext);
   const [loading, setLoading] = useState(false);
+  const inputRef = useRef();
 
   const handleSend = async (text) => {
     if (!text.trim().length) return;
@@ -17,21 +18,20 @@ const ChatInput = ({ onAddMessage }) => {
       type: "send",
     });
     const formData = new FormData();
-    formData.append("device_id", "123456");
+    formData.append("device_id", userInfo.visitorId);
     formData.append("user_chat", text);
     sendnRecieve(formData)
       .then((res) => {
+        inputRef.current.innerHTML = ''
         onAddMessage({
-          text: res.ChatGpt,
+          text: res.ChatGpt || res.msg,
           type: "receive",
         });
         setLoading(false);
-        inputRef.current;
+        // inputRef.current;
       })
       .catch(() => setLoading(false));
   };
-
-  const inputRef = useRef();
 
   const handleInputContent = () => {
     const text = getText(inputRef.current);
