@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     // 返回visitorData时结束加载
     if (error) {
-      setErrorText("EChat load failed, please try later.");
+      setErrorText("Echat load failed, please try later.");
     }
   }, [error]);
   if (loading) {

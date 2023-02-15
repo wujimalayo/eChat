@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["camelcase", "npm:6.3.0"],\
             ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
             ["classnames", "npm:2.3.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclassnames%2F-%2Fclassnames-2.3.2.tgz"],\
+            ["clipboard", "npm:2.0.11::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclipboard%2F-%2Fclipboard-2.0.11.tgz"],\
             ["css-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:6.7.3"],\
             ["css-minimizer-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.4.1"],\
             ["dotenv", "npm:10.0.0"],\
@@ -6801,6 +6802,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["clipboard", [\
+        ["npm:2.0.11::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclipboard%2F-%2Fclipboard-2.0.11.tgz", {\
+          "packageLocation": "./.yarn/cache/clipboard-npm-2.0.11-46ddc0fe91-413055a603.zip/node_modules/clipboard/",\
+          "packageDependencies": [\
+            ["clipboard", "npm:2.0.11::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclipboard%2F-%2Fclipboard-2.0.11.tgz"],\
+            ["good-listener", "npm:1.2.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fgood-listener%2F-%2Fgood-listener-1.2.2.tgz"],\
+            ["select", "npm:1.1.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fselect%2F-%2Fselect-1.1.2.tgz"],\
+            ["tiny-emitter", "npm:2.1.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftiny-emitter%2F-%2Ftiny-emitter-2.1.0.tgz"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["cliui", [\
         ["npm:7.0.4", {\
           "packageLocation": "./.yarn/cache/cliui-npm-7.0.4-d6b8a9edb6-ce2e8f578a.zip/node_modules/cliui/",\
@@ -7830,6 +7843,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/delayed-stream-npm-1.0.0-c5a4c4cc02-46fe6e83e2.zip/node_modules/delayed-stream/",\
           "packageDependencies": [\
             ["delayed-stream", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["delegate", [\
+        ["npm:3.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fdelegate%2F-%2Fdelegate-3.2.0.tgz", {\
+          "packageLocation": "./.yarn/cache/delegate-npm-3.2.0-f56293c83f-d943058fe0.zip/node_modules/delegate/",\
+          "packageDependencies": [\
+            ["delegate", "npm:3.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fdelegate%2F-%2Fdelegate-3.2.0.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9858,6 +9880,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.7::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fglob%2F-%2Fglob-7.1.7.tgz"],\
             ["lodash", "npm:4.17.21"],\
             ["minimatch", "npm:3.0.8::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fminimatch%2F-%2Fminimatch-3.0.8.tgz"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["good-listener", [\
+        ["npm:1.2.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fgood-listener%2F-%2Fgood-listener-1.2.2.tgz", {\
+          "packageLocation": "./.yarn/cache/good-listener-npm-1.2.2-bc810479d9-f39fb82c4e.zip/node_modules/good-listener/",\
+          "packageDependencies": [\
+            ["good-listener", "npm:1.2.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fgood-listener%2F-%2Fgood-listener-1.2.2.tgz"],\
+            ["delegate", "npm:3.2.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fdelegate%2F-%2Fdelegate-3.2.0.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16417,6 +16449,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["select", [\
+        ["npm:1.1.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fselect%2F-%2Fselect-1.1.2.tgz", {\
+          "packageLocation": "./.yarn/cache/select-npm-1.1.2-35b2aca811-4346151e94.zip/node_modules/select/",\
+          "packageDependencies": [\
+            ["select", "npm:1.1.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fselect%2F-%2Fselect-1.1.2.tgz"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["select-hose", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/select-hose-npm-2.0.0-8ce63adb52-d7e5fcc695.zip/node_modules/select-hose/",\
@@ -17486,6 +17527,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["camelcase", "npm:6.3.0"],\
             ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
             ["classnames", "npm:2.3.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclassnames%2F-%2Fclassnames-2.3.2.tgz"],\
+            ["clipboard", "npm:2.0.11::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fclipboard%2F-%2Fclipboard-2.0.11.tgz"],\
             ["css-loader", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:6.7.3"],\
             ["css-minimizer-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.4.1"],\
             ["dotenv", "npm:10.0.0"],\
@@ -17569,6 +17611,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/thunky-npm-1.1.0-2d25531f44-993096c472.zip/node_modules/thunky/",\
           "packageDependencies": [\
             ["thunky", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tiny-emitter", [\
+        ["npm:2.1.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftiny-emitter%2F-%2Ftiny-emitter-2.1.0.tgz", {\
+          "packageLocation": "./.yarn/cache/tiny-emitter-npm-2.1.0-a19c1d926a-fbcfb51457.zip/node_modules/tiny-emitter/",\
+          "packageDependencies": [\
+            ["tiny-emitter", "npm:2.1.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Ftiny-emitter%2F-%2Ftiny-emitter-2.1.0.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\

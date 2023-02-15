@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./index.scss";
 import {
   boot_avatar,
@@ -7,11 +7,13 @@ import {
 } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { useToaster, Message as Msg } from "rsuite";
+import Clipboard from "clipboard";
 
 const Message = ({
   text: _text, // 消息文本
   type, // "receive"接收的消息，"send"发出的消息
   time = null, // 消息时间
+  index,
 }) => {
   const toaster = useToaster();
   const text = useMemo(() => {
@@ -28,15 +30,24 @@ const Message = ({
     </Msg>
   );
 
-  const handleCopy = () => {
-    try {
-      navigator.clipboard.writeText(text);
-      toaster.push(message('复制成功'), { placement: 'topCenter' })
-    } catch (err) {
-      toaster.push(message('复制失败，请长按屏幕手动复制')
-        , { placement: 'topCenter' })
-    }
-  }
+  useEffect(() => {
+    const btnCopy = new Clipboard(`.copy-btn-${index}`);
+    btnCopy.on("success", function (e) {
+      console.log("success");
+      showCopyRes(true);
+      e.clearSelection();
+    });
+
+    btnCopy.on("error", function (e) {
+      showCopyRes(false);
+    });
+  }, []);
+
+  const showCopyRes = (state) => {
+    toaster.push(message(state ? "复制成功" : "复制失败，请长按屏幕手动复制"), {
+      placement: "topCenter",
+    });
+  };
 
   const isSend = useMemo(() => type === "send", [type]);
 
@@ -53,7 +64,11 @@ const Message = ({
       </div>
       {text}
       {!isSend && (
-        <div className={styles.copy} title="复制答案" onClick={handleCopy}>
+        <div
+          className={classNames(styles.copy, `copy-btn-${index}`)}
+          title="复制答案"
+          data-clipboard-text={text}
+        >
           <img src={copy} />
         </div>
       )}
