@@ -5,9 +5,11 @@
   :global {
     .rs-input {
       box-shadow: 0 0 transparent, 0 0 transparent, 0 0 10px rgba(0, 0, 0, 0.1);
+
       &:focus {
         border-color: rgba(0, 0, 0, 0);
       }
+
       resize: none;
     }
   }
@@ -20,15 +22,26 @@
     outline: 0;
     border: 1px solid $border-color-light;
     border-radius: 5px;
-    font-size: 12px;
-    line-height: 24px;
     padding: 4px 8px;
     padding-right: 28px;
-    word-wrap: break-word;
     overflow-x: hidden;
     overflow-y: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    font-size: 12px !important;
+    color: $font-color !important;
+    line-height: 24px !important;
+    word-wrap: break-word !important;
+
+    * {
+      font-size: 12px !important;
+      color: $font-color !important;
+      line-height: 24px !important;
+      word-wrap: break-word !important;
+      font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    }
   }
 
   .send-btn {
@@ -46,15 +59,58 @@
   }
 }
 
+.show {
+  animation: show .8s linear forwards;
+}
+
+.hidden {
+  animation: hidden .8s linear forwards;
+}
+
 .animation-spin {
-  animation: spin 1s infinite linear;
+  animation: spin .8s infinite linear, hidden .8s linear forwards;
+}
+
+.animation-spin-show {
+  animation: spin .8s infinite linear, show .8s linear forwards;
 }
 
 @include keyframes(spin) {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@include keyframes(show) {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+@include keyframes(hidden) {
+  0% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: 1;
   }
 }

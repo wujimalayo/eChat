@@ -12,7 +12,7 @@ import Clipboard from "clipboard";
 const Message = ({
   text: _text, // 消息文本
   type, // "receive"接收的消息，"send"发出的消息
-  time = null, // 消息时间
+  code = 0, // 状态码: 0 有效 1 错误
   index,
 }) => {
   const toaster = useToaster();
@@ -56,8 +56,11 @@ const Message = ({
       className={
         isSend
           ? styles.message
-          : classNames(styles.message, styles["send-message"])
+          : classNames(styles.message, styles["recieve-message"])
       }
+      style={{
+        color: code === 1 ? "#f44336" : "#343541"
+      }}
     >
       <div className={styles.avatar}>
         {isSend ? <img src={question_mark} /> : <img src={boot_avatar} />}

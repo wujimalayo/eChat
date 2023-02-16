@@ -1,6 +1,6 @@
 import "./App.css";
 import "rsuite/dist/rsuite.min.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Chat from "pages/chat";
 import AppLoading from "components/AppLoading";
 import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react";
@@ -12,6 +12,21 @@ function App() {
   // const [phone, setPhone] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState("");
+  const appRef = useRef(null)
+
+  const resize = () => {
+    if (appRef.current) {
+      appRef.current.style.height = `${window.innerHeight}px`
+    }
+  }
+
+  useEffect(() => {
+    resize()
+    window.addEventListener('resize', resize)
+    return () => {
+      window.removeEventListener('resize', resize)
+    }
+  }, [])
 
   useEffect(() => {
     // 返回visitorData时结束加载
@@ -19,14 +34,11 @@ function App() {
       setLoading(false);
       setVisitorId(data.visitorId);
     }
-  }, [data]);
-
-  useEffect(() => {
-    // 返回visitorData时结束加载
     if (error) {
       setErrorText("Echat load failed, please try later.");
     }
-  }, [error]);
+  }, [data, error]);
+
   if (loading) {
     return <AppLoading errorMsg={errorText} />;
   }
@@ -38,7 +50,7 @@ function App() {
         visitorId,
       }}
     >
-      <div className="App">
+      <div ref={appRef} className="App">
         <Chat />
       </div>
     </UserInfoContext.Provider>
