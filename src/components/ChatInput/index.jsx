@@ -9,14 +9,15 @@ const ChatInput = ({ onAddMessage }) => {
   const userInfo = useContext(UserInfoContext);
   const [loading, setLoading] = useState(false);
   const inputRef = useRef(null);
-  const loadingRef = useRef(null)
+  const loadingRef = useRef(null);
 
   useEffect(() => {
     if (loadingRef.current) {
-      loadingRef.current.style.animation =
-        `animation: spin 1s infinite linear,${loading ? 'show' : 'hidden'} 1s linear forwards`
+      loadingRef.current.style.animation = `animation: spin 1s infinite linear,${
+        loading ? "show" : "hidden"
+      } 1s linear forwards`;
     }
-  }, [loading])
+  }, [loading]);
 
   const handleSend = async (text) => {
     if (!text.trim().length) return;
@@ -25,7 +26,7 @@ const ChatInput = ({ onAddMessage }) => {
       text: text,
       type: "send",
     });
-    inputRef.current.innerHTML = ''
+    inputRef.current.innerHTML = "";
     const formData = new FormData();
     formData.append("device_id", userInfo.visitorId);
     formData.append("user_chat", text);
@@ -34,11 +35,18 @@ const ChatInput = ({ onAddMessage }) => {
         onAddMessage({
           text: ChatGpt || msg,
           type: "receive",
-          code: code
+          code: code,
         });
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        onAddMessage({
+          text: "啊这，网络好像出错了，麻烦稍等一下重新编辑发送！",
+          type: "receive",
+          code: 1,
+        });
+        setLoading(false);
+      });
   };
 
   const handleInputContent = () => {
@@ -72,20 +80,14 @@ const ChatInput = ({ onAddMessage }) => {
         <br />
       </div>
       <img
-        className={
-          classNames(
-            styles.send,
-            styles[loading ? "animation-spin-show" : "animation-spin"]
-          )}
+        className={classNames(
+          styles.send,
+          styles[loading ? "animation-spin-show" : "animation-spin"]
+        )}
         src={loading_icon}
       />
       <img
-        className={
-          classNames(
-            styles.send,
-            styles[loading ? "hidden" : "show"]
-          )
-        }
+        className={classNames(styles.send, styles[loading ? "hidden" : "show"])}
         src={send_message}
         onClick={handleInputContent}
       />
