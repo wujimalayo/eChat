@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import styles from "./index.scss";
 import {
   boot_avatar,
@@ -24,9 +24,9 @@ const Message = ({
     );
   }, [_text]);
 
-  const message = (text) => (
-    <Msg showIcon type="info">
-      {text}
+  const message = (isSuccess) => (
+    <Msg showIcon type={isSuccess ? "success" : "warning"} duration={0}>
+      {isSuccess ? "复制成功" : "复制失败，请长按屏幕手动复制"}
     </Msg>
   );
 
@@ -43,8 +43,8 @@ const Message = ({
     });
   }, []);
 
-  const showCopyRes = (state) => {
-    toaster.push(message(state ? "复制成功" : "复制失败，请长按屏幕手动复制"), {
+  const showCopyRes = (isSuccess) => {
+    toaster.push(message(isSuccess), {
       placement: "topCenter",
     });
   };
@@ -59,7 +59,7 @@ const Message = ({
           : classNames(styles.message, styles["recieve-message"])
       }
       style={{
-        color: code === 1 ? "#f44336" : "#343541"
+        color: code === 1 ? "#f44336" : "#343541",
       }}
     >
       <div className={styles.avatar}>

@@ -19,7 +19,7 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 0 transparent, 0 0 transparent, 0 0 10px rgba(0, 0, 0, 0.1);
     color: rgba($color: $primary-color, $alpha: 0.3);
-    -webkit-text-stroke: 1px $primary-color;
+    -webkit-text-stroke: 1.01px $primary-color;
     font-size: 18px;
   }
 
