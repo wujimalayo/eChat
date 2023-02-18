@@ -2,6 +2,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body,
+html {
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  background-color: #f7f7f8;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -15,6 +23,7 @@ code {
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-touch-callout: none;
 }
 
 /* Sections

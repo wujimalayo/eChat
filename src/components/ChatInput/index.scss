@@ -1,6 +1,13 @@
 .input-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
   padding: 8px;
   border-top: 1px solid $border-color;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 
   :global {
     .rs-input {
@@ -39,8 +46,9 @@
       line-height: 24px !important;
       word-wrap: break-word !important;
       font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-        Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+        Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue",
+        Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji" !important;
     }
   }
 
@@ -60,19 +68,19 @@
 }
 
 .show {
-  animation: show .8s linear forwards;
+  animation: show 0.8s linear forwards;
 }
 
 .hidden {
-  animation: hidden .8s linear forwards;
+  animation: hidden 0.8s linear forwards;
 }
 
 .animation-spin {
-  animation: spin .8s infinite linear, hidden .8s linear forwards;
+  animation: spin 0.8s infinite linear, hidden 0.8s linear forwards;
 }
 
 .animation-spin-show {
-  animation: spin .8s infinite linear, show .8s linear forwards;
+  animation: spin 0.8s infinite linear, show 0.8s linear forwards;
 }
 
 @include keyframes(spin) {

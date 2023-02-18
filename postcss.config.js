@@ -2,7 +2,7 @@
 module.exports = {
   plugins: {
     "postcss-px-to-viewport": {
-      unitToConvert: "px", //需要转换的单位，默认为"px"
+      unitToConvert: "rem", //需要转换的单位，默认为"px"
       viewportWidth: 375, // 视窗的宽度，对应的是我们设计稿的宽度
       viewportHeight: 1334, //视窗的高度，根据375设备的宽度来指定，一般指定667，也可以不配置
       unitPrecision: 13, // 指定`px`转换为视窗单位值的小数位数（很多时候无法整除）

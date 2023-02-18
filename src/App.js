@@ -12,21 +12,21 @@ function App() {
   // const [phone, setPhone] = useState(undefined);
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState("");
-  const appRef = useRef(null)
+  const appRef = useRef(null);
 
   const resize = () => {
     if (appRef.current) {
-      appRef.current.style.height = `${window.innerHeight}px`
+      appRef.current.style.height = `${window.innerHeight}px`;
     }
-  }
+  };
 
   useEffect(() => {
-    resize()
-    window.addEventListener('resize', resize)
+    resize();
+    window.addEventListener("resize", resize);
     return () => {
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
 
   useEffect(() => {
     // 返回visitorData时结束加载
@@ -38,6 +38,14 @@ function App() {
       setErrorText("Echat load failed, please try later.");
     }
   }, [data, error]);
+
+  const handleHeightChange = (height) => {
+    appRef.current &&
+      appRef.current.scrollTo({
+        top: height,
+        behavior: "smooth",
+      });
+  };
 
   if (loading) {
     return <AppLoading errorMsg={errorText} />;
@@ -51,7 +59,7 @@ function App() {
       }}
     >
       <div ref={appRef} className="App">
-        <Chat />
+        <Chat onHeightChange={handleHeightChange} />
       </div>
     </UserInfoContext.Provider>
   );

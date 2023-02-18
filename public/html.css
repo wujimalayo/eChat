@@ -4,7 +4,3 @@ body,
   width: 100%;
   height: 100%;
 }
-/* 解决safari等移动浏览器右侧多出一条缝的情况 */
-/* html {
-  width: calc(100% + 0.5px);
-} */
