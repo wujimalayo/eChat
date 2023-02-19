@@ -4,6 +4,7 @@ import ChatInput from "components/ChatInput";
 import ChatContent from "components/ChatContent";
 import { UserInfoContext } from "src/store/context";
 import useListenElementResize from "src/hooks/useListenElementResize";
+import Header from "src/components/Header";
 
 const Chat = ({ onHeightChange }) => {
   const userInfo = useContext(UserInfoContext);
@@ -33,7 +34,7 @@ const Chat = ({ onHeightChange }) => {
 
   return (
     <div className={styles.chat} ref={contentRef}>
-      <div className={styles.header}>Echat</div>
+      <Header />
       <div className={styles["header-blank"]}></div>
       <ChatContent messageList={messageList} />
       <div className={styles["bottom-blank"]}></div>

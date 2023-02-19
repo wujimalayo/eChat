@@ -39,3 +39,11 @@ $border-color-light: rgba(0, 0, 0, 0.1);
   visibility: hidden;
   pointer-events: none;
 }
+
+.border-text {
+  color: rgba($color: $primary-color, $alpha: 0.3);
+  -webkit-text-stroke: 1.01px $primary-color;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 40px;
+}

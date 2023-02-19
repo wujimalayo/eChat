@@ -1,28 +1,6 @@
 .chat {
   width: 100%;
 
-  .header {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8px;
-    height: 40px;
-    line-height: 40px;
-    font-weight: bold;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 transparent, 0 0 transparent, 0 0 10px rgba(0, 0, 0, 0.1);
-    color: rgba($color: $primary-color, $alpha: 0.3);
-    -webkit-text-stroke: 1.01px $primary-color;
-    font-size: 18px;
-  }
-
   .header-blank {
     height: 40px;
   }

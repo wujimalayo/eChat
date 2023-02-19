@@ -27,10 +27,10 @@ const ChatInput = ({ onAddMessage }) => {
       type: "send",
     });
     inputRef.current.innerHTML = "";
-    const formData = new FormData();
-    formData.append("device_id", userInfo.visitorId);
-    formData.append("user_chat", text);
-    sendnRecieve(formData)
+    sendnRecieve({
+      device_id: userInfo.visitorId,
+      user_chat: text,
+    })
       .then(({ ChatGpt, msg, code }) => {
         onAddMessage({
           text: ChatGpt || msg,
