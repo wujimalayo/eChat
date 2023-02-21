@@ -1,16 +1,15 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState, useContext } from "react";
 import styles from "./index.scss";
 import outStyles from "components/ChatInput/index.scss";
+import globalStyles from "src/assets/scss/global.scss";
 import { Input, Swiper } from "antd-mobile";
-import {
-  next,
-  loading_icon,
-  back_grey,
-  back,
-} from "src/assets/assetsCommonExports";
+import { next, loading_icon, copy, back } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { sendCode, login } from "src/service/api";
 import useInterval from "src/hooks/useInterVal";
+import { UserInfoContext } from "src/store/context";
+import Clipboard from "clipboard";
+import PopupMessage from "../PopupMessage";
 
 const Options = () => {
   const swiperRef = useRef(null);
@@ -24,6 +23,16 @@ const Options = () => {
   const [countDown, setCountDown] = useState(60);
   const [delay, setDelay] = useState(null);
   const [verifyCode, setVerifyCode] = useState("");
+  const userInfo = useContext(UserInfoContext);
+  const token = localStorage.getItem("echat_token");
+
+  useEffect(() => {
+    if (!token) {
+      swiperRef.current.swipeTo(0);
+    } else {
+      swiperRef.current.swipeTo(2);
+    }
+  }, [token]);
 
   useInterval(() => {
     setCountDown((n) => n - 1);
@@ -59,7 +68,24 @@ const Options = () => {
         setIsFocus(false);
       };
     }
+
+    // 初始化复制按钮
+    const btnCopy = new Clipboard("#copy-code");
+    btnCopy.on("success", function (e) {
+      showCopyRes(true);
+      e.clearSelection();
+    });
+
+    btnCopy.on("error", function (e) {
+      showCopyRes(false);
+    });
   }, []);
+
+  const showCopyRes = (isSuccess) => {
+    isSuccess
+      ? PopupMessage.success("复制成功")
+      : PopupMessage.warning("复制失败，请长按屏幕手动复制");
+  };
 
   const handleSendCode = () => {
     if (!loading && isPhoneNumber) {
@@ -81,10 +107,23 @@ const Options = () => {
   const handleLogin = () => {
     if (!verifyLoading && verifyCode.length >= 4) {
       setVerifyLoading(true);
-      /* login({
+      login({
         mobile: phone,
-        password: verifyCode,
-      }); */
+        code: verifyCode,
+        device_id: userInfo.visitorId,
+      })
+        .then((res) => {
+          setVerifyLoading(false);
+          if (res.code === 0) {
+            userInfo.updateUserInfo({
+              phone,
+              inviteCode: res.invite_code,
+            });
+            localStorage.setItem("echat_token", res.token);
+            swiperRef.current.swipeTo(2);
+          }
+        })
+        .catch(() => setVerifyLoading(false));
     }
   };
 
@@ -98,7 +137,9 @@ const Options = () => {
               "--border-color": isFocus ? "#256371" : "#cccccc",
             }}
           >
-            <div className={classNames("border-text", styles.title)}>
+            <div
+              className={classNames(globalStyles["border-text"], styles.title)}
+            >
               Echat Account
             </div>
             <Input
@@ -152,7 +193,9 @@ const Options = () => {
               src={back}
               onClick={() => swiperRef.current.swipePrev()}
             />
-            <div className={classNames("border-text", styles.title)}>
+            <div
+              className={classNames(globalStyles["border-text"], styles.title)}
+            >
               Echat Account
             </div>
             <Input
@@ -186,6 +229,27 @@ const Options = () => {
               )}
               src={loading_icon}
             />
+          </div>
+        </Swiper.Item>
+        <Swiper.Item>
+          <div className={styles.content}>
+            <div className={styles["account-info"]}>
+              <div className={globalStyles["border-text"]}>
+                {userInfo.inviteCode || "LRiA"}
+                <img
+                  id="copy-code"
+                  title="复制邀请码"
+                  data-clipboard-text={userInfo.inviteCode || "LRiA"}
+                  className={styles.copy}
+                  src={copy}
+                />
+              </div>
+              <div className={styles["sub-info"]}>
+                <div>手机号：{userInfo.phone}</div>
+                <div>设备号：{userInfo.visitorId}</div>
+                <div>查询余额：{userInfo.chatFee || "--"}</div>
+              </div>
+            </div>
           </div>
         </Swiper.Item>
       </Swiper>

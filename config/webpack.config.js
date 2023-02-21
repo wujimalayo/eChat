@@ -544,7 +544,7 @@ module.exports = function (webpackEnv) {
                   modules: {
                     localIdentName: isEnvProduction
                       ? "[hash:base64:5]"
-                      : "[local]",
+                      : "[local]_[hash:base64:5]",
                   },
                 },
                 "sass-loader"

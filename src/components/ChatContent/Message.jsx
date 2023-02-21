@@ -6,8 +6,8 @@ import {
   copy,
 } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
-import { useToaster, Message as Msg } from "rsuite";
 import Clipboard from "clipboard";
+import PopupMessage from "../PopupMessage";
 
 const Message = ({
   text: _text, // 消息文本
@@ -15,7 +15,6 @@ const Message = ({
   code = 0, // 状态码: 0 有效 1 错误
   index,
 }) => {
-  const toaster = useToaster();
   const text = useMemo(() => {
     return _text ? (
       _text
@@ -24,16 +23,9 @@ const Message = ({
     );
   }, [_text]);
 
-  const message = (isSuccess) => (
-    <Msg showIcon type={isSuccess ? "success" : "warning"} duration={0}>
-      {isSuccess ? "复制成功" : "复制失败，请长按屏幕手动复制"}
-    </Msg>
-  );
-
   useEffect(() => {
     const btnCopy = new Clipboard(`.copy-btn-${index}`);
     btnCopy.on("success", function (e) {
-      console.log("success");
       showCopyRes(true);
       e.clearSelection();
     });
@@ -44,9 +36,9 @@ const Message = ({
   }, []);
 
   const showCopyRes = (isSuccess) => {
-    toaster.push(message(isSuccess), {
-      placement: "topCenter",
-    });
+    isSuccess
+      ? PopupMessage.success("复制成功")
+      : PopupMessage.warning("复制失败，请长按屏幕手动复制");
   };
 
   const isSend = useMemo(() => type === "send", [type]);

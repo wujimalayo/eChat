@@ -8,8 +8,13 @@ import { UserInfoContext } from "src/store/context";
 
 function App() {
   const { error, data } = useVisitorData();
-  const [visitorId, setVisitorId] = useState(undefined);
-  // const [phone, setPhone] = useState(undefined);
+
+  const [userInfo, setUserInfo] = useState({
+    phone: "",
+    inviteCode: "",
+    visitorId: "",
+  });
+
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState("");
   const appRef = useRef(null);
@@ -32,12 +37,19 @@ function App() {
     // 返回visitorData时结束加载
     if (data) {
       setLoading(false);
-      setVisitorId(data.visitorId);
+      handleUpdateUserInfo({ visitorId: data.visitorId });
     }
     if (error) {
       setErrorText("Echat load failed, please try later.");
     }
   }, [data, error]);
+
+  const handleUpdateUserInfo = (info) => {
+    setUserInfo((o) => ({
+      ...o,
+      ...info,
+    }));
+  };
 
   const handleHeightChange = (height) => {
     appRef.current &&
@@ -53,10 +65,7 @@ function App() {
 
   return (
     <UserInfoContext.Provider
-      value={{
-        phone: undefined,
-        visitorId,
-      }}
+      value={{ ...userInfo, updateUserInfo: handleUpdateUserInfo }}
     >
       <div ref={appRef} className="App">
         <Chat onHeightChange={handleHeightChange} />

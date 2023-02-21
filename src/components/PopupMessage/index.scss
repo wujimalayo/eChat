@@ -1,0 +1,24 @@
+:global {
+  .rs-message {
+    font-size: 12px;
+  }
+  .rs-toast-container-top-center {
+    top: 28px;
+  }
+  .rs-message-success {
+    background-color: rgba($color: #c8edf5, $alpha: 0.8);
+  }
+  .rs-message-container {
+    padding: 14px 18px;
+  }
+  .rs-message-icon-wrapper .rs-icon {
+    font-size: 12px;
+  }
+  .rs-message-success .rs-btn-close,
+  .rs-message-success .rs-message-icon-wrapper > .rs-icon {
+    color: $sub-color;
+  }
+  .rs-message-success .rs-message-body {
+    color: $font-color;
+  }
+}
