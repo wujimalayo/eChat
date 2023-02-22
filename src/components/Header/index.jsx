@@ -16,14 +16,13 @@ const Header = () => {
       <div />
       <Popup
         visible={visible}
-        onMaskClick={() => {
-          setVisible(false);
-        }}
+        onMaskClick={() => setVisible(false)}
         maskStyle={{
           background: "rgba(0,0,0,0.25)",
         }}
+        forceRender={true}
       >
-        <Options />
+        <Options open={() => setVisible(true)} />
       </Popup>
     </div>
   );

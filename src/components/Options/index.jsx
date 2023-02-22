@@ -5,13 +5,14 @@ import globalStyles from "src/assets/scss/global.scss";
 import { Input, Swiper } from "antd-mobile";
 import { next, loading_icon, copy, back } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
-import { sendCode, login } from "src/service/api";
+import { sendCode, login, getUserInfo, refreshToken } from "src/service/api";
 import useInterval from "src/hooks/useInterVal";
 import { UserInfoContext } from "src/store/context";
 import Clipboard from "clipboard";
 import PopupMessage from "../PopupMessage";
+import { TOKEN_KEY } from "src/assets/constant";
 
-const Options = () => {
+const Options = ({ open }) => {
   const swiperRef = useRef(null);
   const inputRef = useRef(null);
   const verifyRef = useRef(null);
@@ -24,15 +25,6 @@ const Options = () => {
   const [delay, setDelay] = useState(null);
   const [verifyCode, setVerifyCode] = useState("");
   const userInfo = useContext(UserInfoContext);
-  const token = localStorage.getItem("echat_token");
-
-  useEffect(() => {
-    if (!token) {
-      swiperRef.current.swipeTo(0);
-    } else {
-      swiperRef.current.swipeTo(2);
-    }
-  }, [token]);
 
   useInterval(() => {
     setCountDown((n) => n - 1);
@@ -52,21 +44,14 @@ const Options = () => {
   }, [phone]);
 
   useEffect(() => {
+    // input聚、失焦事件绑定
     if (inputRef.current) {
-      inputRef.current.nativeElement.onfocus = () => {
-        setIsFocus(true);
-      };
-      inputRef.current.nativeElement.onblur = () => {
-        setIsFocus(false);
-      };
+      inputRef.current.nativeElement.onfocus = () => setIsFocus(true);
+      inputRef.current.nativeElement.onblur = () => setIsFocus(false);
     }
     if (verifyRef.current) {
-      verifyRef.current.nativeElement.onfocus = () => {
-        setIsFocus(true);
-      };
-      verifyRef.current.nativeElement.onblur = () => {
-        setIsFocus(false);
-      };
+      verifyRef.current.nativeElement.onfocus = () => setIsFocus(true);
+      verifyRef.current.nativeElement.onblur = () => setIsFocus(false);
     }
 
     // 初始化复制按钮
@@ -75,11 +60,33 @@ const Options = () => {
       showCopyRes(true);
       e.clearSelection();
     });
-
     btnCopy.on("error", function (e) {
       showCopyRes(false);
     });
+
+    // 检查登录信息
+    checkUser();
   }, []);
+
+  const checkUser = () => {
+    getUserInfo().then((res) => {
+      if (res.code === 0) {
+        swiperRef.current.swipeTo(2);
+        refreshToken().then((res) => {
+          localStorage.setItem(TOKEN_KEY, res.token);
+        });
+        userInfo.updateUserInfo({
+          phone: res.mobile,
+          inviteCode: res.invite_code,
+          chatNum: res.chat_num,
+        });
+      } else {
+        localStorage.removeItem(TOKEN_KEY);
+        swiperRef.current.swipeTo(0);
+        open();
+      }
+    });
+  };
 
   const showCopyRes = (isSuccess) => {
     isSuccess
@@ -96,8 +103,11 @@ const Options = () => {
         .then((res) => {
           setLoading(false);
           if (res.code === 0) {
+            PopupMessage.success("验证码发送成功");
             setDelay(1000);
             swiperRef.current.swipeTo(1);
+          } else {
+            PopupMessage.warning(res.msg);
           }
         })
         .catch(() => setLoading(false));
@@ -116,11 +126,14 @@ const Options = () => {
           setVerifyLoading(false);
           if (res.code === 0) {
             userInfo.updateUserInfo({
-              phone,
+              phone: res.mobile,
               inviteCode: res.invite_code,
+              chatNum: res.chat_num,
             });
-            localStorage.setItem("echat_token", res.token);
+            localStorage.setItem(TOKEN_KEY, res.token);
             swiperRef.current.swipeTo(2);
+          } else {
+            PopupMessage.warning(res.msg);
           }
         })
         .catch(() => setVerifyLoading(false));
@@ -235,7 +248,7 @@ const Options = () => {
           <div className={styles.content}>
             <div className={styles["account-info"]}>
               <div className={globalStyles["border-text"]}>
-                {userInfo.inviteCode || "LRiA"}
+                {userInfo.inviteCode || "--"}
                 <img
                   id="copy-code"
                   title="复制邀请码"
@@ -247,7 +260,7 @@ const Options = () => {
               <div className={styles["sub-info"]}>
                 <div>手机号：{userInfo.phone}</div>
                 <div>设备号：{userInfo.visitorId}</div>
-                <div>查询余额：{userInfo.chatFee || "--"}</div>
+                <div>查询余额(次数)：{userInfo.chatNum || 0}</div>
               </div>
             </div>
           </div>

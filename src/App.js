@@ -13,6 +13,7 @@ function App() {
     phone: "",
     inviteCode: "",
     visitorId: "",
+    chatNum: 0,
   });
 
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function App() {
   useEffect(() => {
     resize();
     window.addEventListener("resize", resize);
+
     return () => {
       window.removeEventListener("resize", resize);
     };

@@ -1,5 +1,15 @@
 import { request } from "src/utils/request";
 
+//  查询用户信息
+export const getUserInfo = () => {
+  return request("http://150.109.70.53/e/getUser");
+};
+
+// 刷新token
+export const refreshToken = () => {
+  return request("http://150.109.70.53/e/refresh");
+};
+
 // 发送问题，返回回答
 export const sendnRecieve = (params) => {
   return request("http://150.109.70.53/e/chat", params);

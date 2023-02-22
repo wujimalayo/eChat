@@ -7,7 +7,6 @@ const ChatContent = ({ messageList }) => {
   const listRef = useRef(null);
   const contentRef = useRef(null);
   const { _, height } = useListenElementResize(listRef);
-
   useEffect(() => {
     contentRef.current &&
       contentRef.current.scrollTo({

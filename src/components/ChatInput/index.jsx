@@ -31,17 +31,20 @@ const ChatInput = ({ onAddMessage }) => {
       device_id: userInfo.visitorId,
       user_chat: text,
     })
-      .then(({ ChatGpt, msg, code }) => {
+      .then(({ ChatGpt, msg, code, chat_num }) => {
         onAddMessage({
           text: ChatGpt || msg,
           type: "receive",
           code: code,
         });
+        userInfo.updateUserInfo({
+          chatNum: chat_num,
+        });
         setLoading(false);
       })
       .catch(() => {
         onAddMessage({
-          text: "啊这，网络好像出错了，麻烦稍等一下重新编辑发送！",
+          text: "网络好像出错了，请检查本地网络质量后重新编辑发送或联系开发人员",
           type: "receive",
           code: 1,
         });

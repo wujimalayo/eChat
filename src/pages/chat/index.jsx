@@ -10,7 +10,6 @@ const Chat = ({ onHeightChange }) => {
   const userInfo = useContext(UserInfoContext);
   const contentRef = useRef(null);
   const { _, height } = useListenElementResize(contentRef);
-
   useEffect(() => {
     onHeightChange(height);
   }, [height]);
