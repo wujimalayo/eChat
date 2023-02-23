@@ -261,6 +261,13 @@ const Options = ({ open }) => {
                 <div>手机号：{userInfo.phone}</div>
                 <div>设备号：{userInfo.visitorId}</div>
                 <div>查询余额(次数)：{userInfo.chatNum || 0}</div>
+                <br />
+                由于成本有限，Echat测试版添加了相应的使用限制：
+                <ul>
+                  <li>首次使用拥有5次查询次数（每个设备id）</li>
+                  <li>登录后增加10次（每个手机号）</li>
+                  <li>次数用完后可联系开发人员免费增加次数。</li>
+                </ul>
               </div>
             </div>
           </div>

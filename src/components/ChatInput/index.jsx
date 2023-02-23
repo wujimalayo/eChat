@@ -8,6 +8,7 @@ import { UserInfoContext } from "src/store/context";
 const ChatInput = ({ onAddMessage }) => {
   const userInfo = useContext(UserInfoContext);
   const [loading, setLoading] = useState(false);
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
   const inputRef = useRef(null);
   const loadingRef = useRef(null);
 
@@ -72,13 +73,29 @@ const ChatInput = ({ onAddMessage }) => {
     return res;
   };
 
+  const handleInput = () => {
+    const length = getText(inputRef.current).length;
+    if (length > 0) {
+      setShowPlaceholder(false);
+    } else {
+      setShowPlaceholder(true);
+    }
+  };
+
   return (
     <div className={styles["input-wrapper"]}>
+      {showPlaceholder && (
+        <div className={styles["show-placeholder"]}>
+          在这里输入你想查询的内容噢~
+        </div>
+      )}
+
       <div
         ref={inputRef}
-        className={styles.textarea}
+        className={classNames(styles.textarea)}
         suppressContentEditableWarning
         contentEditable={true}
+        onInput={() => handleInput()}
       >
         <br />
       </div>
