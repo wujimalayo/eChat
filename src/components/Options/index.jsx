@@ -11,6 +11,7 @@ import { UserInfoContext } from "src/store/context";
 import Clipboard from "clipboard";
 import PopupMessage from "../PopupMessage";
 import { TOKEN_KEY } from "src/assets/constant";
+import useIsLandscape from "src/hooks/useIsLandscape";
 
 const Options = ({ open }) => {
   const swiperRef = useRef(null);
@@ -25,6 +26,7 @@ const Options = ({ open }) => {
   const [delay, setDelay] = useState(null);
   const [verifyCode, setVerifyCode] = useState("");
   const userInfo = useContext(UserInfoContext);
+  const isLandscape = useIsLandscape();
 
   useInterval(() => {
     setCountDown((n) => n - 1);
@@ -141,7 +143,12 @@ const Options = ({ open }) => {
   };
 
   return (
-    <div className={styles.options}>
+    <div
+      className={classNames(
+        styles.options,
+        isLandscape ? styles["options-landscape"] : ""
+      )}
+    >
       <Swiper indicator={() => null} allowTouchMove={false} ref={swiperRef}>
         <Swiper.Item>
           <div
@@ -245,7 +252,7 @@ const Options = ({ open }) => {
           </div>
         </Swiper.Item>
         <Swiper.Item>
-          <div className={styles.content}>
+          <div className={styles.content} style={{ paddingTop: 0 }}>
             <div className={styles["account-info"]}>
               <div className={globalStyles["border-text"]}>
                 {userInfo.inviteCode || "--"}
@@ -260,8 +267,9 @@ const Options = ({ open }) => {
               <div className={styles["sub-info"]}>
                 <div>手机号：{userInfo.phone}</div>
                 <div>设备号：{userInfo.visitorId}</div>
-                <div>查询余额(次数)：{userInfo.chatNum || 0}</div>
-                <br />
+                <div style={{ marginBottom: 16 }}>
+                  查询余额(次数)：{userInfo.chatNum || 0}
+                </div>
                 由于成本有限，Echat测试版添加了相应的使用限制：
                 <ul>
                   <li>首次使用拥有5次查询次数（每个设备id）</li>

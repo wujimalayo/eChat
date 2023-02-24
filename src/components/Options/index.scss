@@ -95,6 +95,7 @@
     .account-info {
       width: 100%;
       color: $sub-font-color;
+      padding-top: 32px;
 
       .copy {
         width: 12px;
@@ -103,7 +104,8 @@
       }
 
       .sub-info {
-        line-height: 20px;
+        line-height: 24px;
+        font-size: 12px;
         ul {
           font-size: 10px;
           padding-left: 20px;
@@ -111,4 +113,10 @@
       }
     }
   }
+}
+
+.options-landscape {
+  height: auto;
+  width: 300px;
+  flex-direction: row;
 }

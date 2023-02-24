@@ -3,9 +3,11 @@ import styles from "./index.scss";
 import { bars_solid } from "src/assets/assetsCommonExports";
 import { Popup } from "antd-mobile";
 import Options from "../Options";
+import useIsLandscape from "src/hooks/useIsLandscape";
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
+  const isLandscape = useIsLandscape();
 
   return (
     <div className={styles.header}>
@@ -21,6 +23,7 @@ const Header = () => {
           background: "rgba(0,0,0,0.25)",
         }}
         forceRender={true}
+        position={isLandscape ? "left" : "bottom"}
       >
         <Options open={() => setVisible(true)} />
       </Popup>
