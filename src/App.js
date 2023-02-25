@@ -18,6 +18,8 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [errorText, setErrorText] = useState("");
+  // 全局控制options是否弹出
+  const [optionsVisible, setOptionsVisible] = useState(false);
   const appRef = useRef(null);
 
   const resize = () => {
@@ -67,7 +69,12 @@ function App() {
 
   return (
     <UserInfoContext.Provider
-      value={{ ...userInfo, updateUserInfo: handleUpdateUserInfo }}
+      value={{
+        ...userInfo,
+        updateUserInfo: handleUpdateUserInfo,
+        optionsVisible,
+        setOptionsVisible,
+      }}
     >
       <div ref={appRef} className="App">
         <Chat onHeightChange={handleHeightChange} />

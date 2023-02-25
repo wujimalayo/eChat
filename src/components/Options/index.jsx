@@ -13,7 +13,7 @@ import PopupMessage from "../PopupMessage";
 import { TOKEN_KEY } from "src/assets/constant";
 import useIsLandscape from "src/hooks/useIsLandscape";
 
-const Options = ({ open }) => {
+const Options = ({ open, visible }) => {
   const swiperRef = useRef(null);
   const inputRef = useRef(null);
   const verifyRef = useRef(null);
@@ -65,10 +65,14 @@ const Options = ({ open }) => {
     btnCopy.on("error", function (e) {
       showCopyRes(false);
     });
-
-    // 检查登录信息
-    checkUser();
   }, []);
+
+  useEffect(() => {
+    if (visible) {
+      // 检查登录信息
+      checkUser();
+    }
+  }, [visible]);
 
   const checkUser = () => {
     getUserInfo().then((res) => {

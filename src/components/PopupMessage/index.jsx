@@ -7,6 +7,7 @@ const PopupMessage = forwardRef((props, ref) => {
   useImperativeHandle(ref, () => ({
     success: (text) => showToaster("success", text),
     warning: (text) => showToaster("warning", text),
+    error: (text) => showToaster("error", text),
   }));
 
   const toaster = useToaster();
@@ -38,4 +39,5 @@ root.render(<PopupMessage ref={msgRef} />);
 export default {
   success: (text) => msgRef.current.success(text),
   warning: (text) => msgRef.current.warning(text),
+  error: (text) => msgRef.current.error(text),
 };

@@ -4,6 +4,7 @@ import { send_message, loading_icon } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { sendnRecieve } from "src/service/api";
 import { UserInfoContext } from "src/store/context";
+import PopupMessage from "../PopupMessage";
 
 const ChatInput = ({ onAddMessage }) => {
   const userInfo = useContext(UserInfoContext);
@@ -42,10 +43,14 @@ const ChatInput = ({ onAddMessage }) => {
           chatNum: chat_num,
         });
         setLoading(false);
+        if (msg && msg.includes("token认证失败")) {
+          userInfo.setOptionsVisible(true);
+        }
       })
-      .catch(() => {
+      .catch((err) => {
+        PopupMessage.error(err);
         onAddMessage({
-          text: "网络好像出错了，请检查本地网络质量后重新编辑发送或联系开发人员",
+          text: "网络好像出错了，请稍后重新编辑发送或联系开发人员",
           type: "receive",
           code: 1,
         });
