@@ -28,8 +28,7 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 
 const createEnvironmentHash = require("./webpack/persistentCache/createEnvironmentHash");
 const postCssConfig = require("../postcss.config");
-const postcsspx2viewportConfig =
-  postCssConfig.plugins["postcss-px-to-viewport"];
+const postsspx2viewport = postCssConfig.plugins["postcss-px-to-viewport"];
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
@@ -151,7 +150,7 @@ module.exports = function (webpackEnv) {
                   // so that it honors browserslist config in package.json
                   // which in turn let's users customize the target behavior as per their needs.
                   "postcss-normalize",
-                  ["postcss-px-to-viewport", postcsspx2viewportConfig],
+                  ["postcss-px-to-viewport", postsspx2viewport],
                 ]
               : [
                   "tailwindcss",
@@ -575,6 +574,10 @@ module.exports = function (webpackEnv) {
               // by webpacks internal loaders.
               exclude: [/^$/, /\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
               type: "asset/resource",
+            },
+            {
+              test: /\.(ts|tsx)$/,
+              loader: "awesome-typescript-loader",
             },
             // ** STOP ** Are you adding a new loader?
             // Make sure to add the new loader(s) before the "file" loader.

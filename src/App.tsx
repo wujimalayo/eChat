@@ -1,6 +1,6 @@
 import "./App.css";
 import "rsuite/dist/rsuite.min.css";
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Chat from "pages/chat";
 import AppLoading from "components/AppLoading";
 import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react";
@@ -20,7 +20,7 @@ function App() {
   const [errorText, setErrorText] = useState("");
   // 全局控制options是否弹出
   const [optionsVisible, setOptionsVisible] = useState(false);
-  const appRef = useRef(null);
+  const appRef = useRef<HTMLInputElement>(null);
 
   const resize = () => {
     if (appRef.current) {
@@ -48,14 +48,19 @@ function App() {
     }
   }, [data, error]);
 
-  const handleUpdateUserInfo = (info) => {
+  const handleUpdateUserInfo = (info: {
+    visitorId: string;
+    phone?: string;
+    inviteCode?: string;
+    chatNum?: number;
+  }) => {
     setUserInfo((o) => ({
       ...o,
       ...info,
     }));
   };
 
-  const handleHeightChange = (height) => {
+  const handleHeightChange = (height: number) => {
     appRef.current &&
       appRef.current.scrollTo({
         top: height,
