@@ -3,15 +3,30 @@ import styles from "./index.scss";
 import { send_message, loading_icon } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { sendnRecieve } from "src/service/api";
-import { UserInfoContext } from "src/store/context";
+import { Context } from "src/store/context";
 import PopupMessage from "../PopupMessage";
+import VConsole from "vconsole";
 
 const ChatInput = ({ onAddMessage }) => {
-  const userInfo = useContext(UserInfoContext);
+  const userInfo = useContext(Context);
   const [loading, setLoading] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(true);
   const inputRef = useRef(null);
   const loadingRef = useRef(null);
+  const vConsole = new VConsole({ theme: "dark" });
+
+  useEffect(() => {
+    addEventListener("keyup", (e) => {
+      console.log(e.code);
+    });
+
+    return () => {
+      removeEventListener("keyup", (e) => {
+        console.log(e);
+      });
+      vConsole.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     if (loadingRef.current) {

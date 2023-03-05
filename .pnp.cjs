@@ -92,6 +92,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tailwindcss", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.2.6"],\
             ["terser-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:5.3.6"],\
             ["typescript", "patch:typescript@npm%3A4.9.5%3A%3A__archiveUrl=https%253A%252F%252Fregistry.npmmirror.com%252Ftypescript%252F-%252Ftypescript-4.9.5.tgz#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
+            ["vconsole", "npm:3.15.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvconsole%2F-%2Fvconsole-3.15.0.tgz"],\
             ["web-vitals", "npm:2.1.4"],\
             ["webpack", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:5.75.0"],\
             ["webpack-dev-server", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:4.11.1"],\
@@ -2855,6 +2856,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.20.13-c36ec95bce-09b7a97a05.zip/node_modules/@babel/runtime/",\
           "packageDependencies": [\
             ["@babel/runtime", "npm:7.20.13::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.20.13.tgz"],\
+            ["regenerator-runtime", "npm:0.13.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:7.21.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.21.0.tgz", {\
+          "packageLocation": "./.yarn/cache/@babel-runtime-npm-7.21.0-7ee4849c4c-7b33e25bfa.zip/node_modules/@babel/runtime/",\
+          "packageDependencies": [\
+            ["@babel/runtime", "npm:7.21.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.21.0.tgz"],\
             ["regenerator-runtime", "npm:0.13.11"]\
           ],\
           "linkType": "HARD"\
@@ -7656,11 +7665,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["copy-text-to-clipboard", [\
+        ["npm:3.0.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcopy-text-to-clipboard%2F-%2Fcopy-text-to-clipboard-3.0.1.tgz", {\
+          "packageLocation": "./.yarn/cache/copy-text-to-clipboard-npm-3.0.1-5ffca2dab7-4c301b9a65.zip/node_modules/copy-text-to-clipboard/",\
+          "packageDependencies": [\
+            ["copy-text-to-clipboard", "npm:3.0.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcopy-text-to-clipboard%2F-%2Fcopy-text-to-clipboard-3.0.1.tgz"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["core-js", [\
         ["npm:3.27.2", {\
           "packageLocation": "./.yarn/unplugged/core-js-npm-3.27.2-99146711a6/node_modules/core-js/",\
           "packageDependencies": [\
             ["core-js", "npm:3.27.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.29.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcore-js%2F-%2Fcore-js-3.29.0.tgz", {\
+          "packageLocation": "./.yarn/unplugged/core-js-npm-3.29.0-80b6e67d53/node_modules/core-js/",\
+          "packageDependencies": [\
+            ["core-js", "npm:3.29.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcore-js%2F-%2Fcore-js-3.29.0.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13845,6 +13870,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["mutation-observer", [\
+        ["npm:1.0.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fmutation-observer%2F-%2Fmutation-observer-1.0.3.tgz", {\
+          "packageLocation": "./.yarn/cache/mutation-observer-npm-1.0.3-fd44c33c4f-6b550215af.zip/node_modules/mutation-observer/",\
+          "packageDependencies": [\
+            ["mutation-observer", "npm:1.0.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fmutation-observer%2F-%2Fmutation-observer-1.0.3.tgz"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["nan", [\
         ["npm:2.17.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fnan%2F-%2Fnan-2.17.0.tgz", {\
           "packageLocation": "./.yarn/unplugged/nan-npm-2.17.0-fcc40c0a05/node_modules/nan/",\
@@ -19036,6 +19070,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tailwindcss", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:3.2.6"],\
             ["terser-webpack-plugin", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:5.3.6"],\
             ["typescript", "patch:typescript@npm%3A4.9.5%3A%3A__archiveUrl=https%253A%252F%252Fregistry.npmmirror.com%252Ftypescript%252F-%252Ftypescript-4.9.5.tgz#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
+            ["vconsole", "npm:3.15.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvconsole%2F-%2Fvconsole-3.15.0.tgz"],\
             ["web-vitals", "npm:2.1.4"],\
             ["webpack", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:5.75.0"],\
             ["webpack-dev-server", "virtual:9e770785b9955b4f7dc1f09a82ba991185015aeb2bdd0ad912e92af6fe3d1ef448dc084efc32c63831e0a9f27cedcc780a6a96d6d603d2b68a4c30762b78ad4d#npm:4.11.1"],\
@@ -19784,6 +19819,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/vary-npm-1.1.2-b49f70ae63-ae0123222c.zip/node_modules/vary/",\
           "packageDependencies": [\
             ["vary", "npm:1.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vconsole", [\
+        ["npm:3.15.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvconsole%2F-%2Fvconsole-3.15.0.tgz", {\
+          "packageLocation": "./.yarn/cache/vconsole-npm-3.15.0-a85155b8de-b0f7335316.zip/node_modules/vconsole/",\
+          "packageDependencies": [\
+            ["vconsole", "npm:3.15.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvconsole%2F-%2Fvconsole-3.15.0.tgz"],\
+            ["@babel/runtime", "npm:7.21.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.21.0.tgz"],\
+            ["copy-text-to-clipboard", "npm:3.0.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcopy-text-to-clipboard%2F-%2Fcopy-text-to-clipboard-3.0.1.tgz"],\
+            ["core-js", "npm:3.29.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcore-js%2F-%2Fcore-js-3.29.0.tgz"],\
+            ["mutation-observer", "npm:1.0.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fmutation-observer%2F-%2Fmutation-observer-1.0.3.tgz"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -1476,6 +1476,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.17.2":
+  version: 7.21.0
+  resolution: "@babel/runtime@npm:7.21.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2F-%2Fruntime-7.21.0.tgz"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.18.10, @babel/template@npm:^7.20.7, @babel/template@npm:^7.3.3":
   version: 7.20.7
   resolution: "@babel/template@npm:7.20.7"
@@ -5216,6 +5225,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"copy-text-to-clipboard@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "copy-text-to-clipboard@npm:3.0.1::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcopy-text-to-clipboard%2F-%2Fcopy-text-to-clipboard-3.0.1.tgz"
+  checksum: 4c301b9a65c8bf337e26a74d28849096651697fac829a364c463df81ba5ddfeea0741214f9f1232832fffd229ebd5659d3abcccea3fe54d7010a22e515cc38bc
+  languageName: node
+  linkType: hard
+
 "core-js-compat@npm:^3.25.1":
   version: 3.27.2
   resolution: "core-js-compat@npm:3.27.2"
@@ -5229,6 +5245,13 @@ __metadata:
   version: 3.27.2
   resolution: "core-js-pure@npm:3.27.2"
   checksum: 7cb24502a782a032ffa2af6e84abfcfeffa0c30e84c38f4d0a1d7567c8c86e2d36a7554a00ca47762606c84d2a86d99662a7158e9f4df989f3fe3c7e7c09fa45
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.11.0":
+  version: 3.29.0
+  resolution: "core-js@npm:3.29.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fcore-js%2F-%2Fcore-js-3.29.0.tgz"
+  checksum: 2bd69d783efcd2ef9197ce892a8b91d7b2fd86dddce805a3be0ff721013a2342eeab0f7d0b4b5548c1377b9846a8fb81485054efd39618b9d1a1fca04af81ccf
   languageName: node
   linkType: hard
 
@@ -10506,6 +10529,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mutation-observer@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "mutation-observer@npm:1.0.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fmutation-observer%2F-%2Fmutation-observer-1.0.3.tgz"
+  checksum: 6b550215af970471ec900a6c89397d032c49d13d402e1c93c3cb9b0324c49a2628f6a06839106075a005d640305d250b80f2960c27b2a379055f5bc54851c35e
+  languageName: node
+  linkType: hard
+
 "nan@npm:^2.13.2":
   version: 2.17.0
   resolution: "nan@npm:2.17.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fnan%2F-%2Fnan-2.17.0.tgz"
@@ -14407,6 +14437,7 @@ __metadata:
     tailwindcss: ^3.0.2
     terser-webpack-plugin: ^5.2.5
     typescript: ^4.9.5
+    vconsole: ^3.15.0
     web-vitals: ^2.1.0
     webpack: ^5.64.4
     webpack-dev-server: ^4.6.0
@@ -15046,6 +15077,18 @@ __metadata:
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: ae0123222c6df65b437669d63dfa8c36cee20a504101b2fcd97b8bf76f91259c17f9f2b4d70a1e3c6bbcee7f51b28392833adb6b2770b23b01abec84e369660b
+  languageName: node
+  linkType: hard
+
+"vconsole@npm:^3.15.0":
+  version: 3.15.0
+  resolution: "vconsole@npm:3.15.0::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvconsole%2F-%2Fvconsole-3.15.0.tgz"
+  dependencies:
+    "@babel/runtime": ^7.17.2
+    copy-text-to-clipboard: ^3.0.1
+    core-js: ^3.11.0
+    mutation-observer: ^1.0.3
+  checksum: b0f73353161998805484258bab0046432c09f01bb4a2de0878cd3441810a3553336c397fd1ec8c4e9e239e3967937b3b41fd728d8a1c8289737a5f5f0b9850ad
   languageName: node
   linkType: hard
 
