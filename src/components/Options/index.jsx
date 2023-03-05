@@ -7,7 +7,7 @@ import { next, loading_icon, copy, back } from "src/assets/assetsCommonExports";
 import classNames from "classnames";
 import { sendCode, login, getUserInfo, refreshToken } from "src/service/api";
 import useInterval from "src/hooks/useInterVal";
-import { UserInfoContext } from "src/store/context";
+import { Context } from "src/store/context";
 import Clipboard from "clipboard";
 import PopupMessage from "../PopupMessage";
 import { TOKEN_KEY } from "src/assets/constant";
@@ -25,7 +25,7 @@ const Options = ({ open, visible }) => {
   const [countDown, setCountDown] = useState(60);
   const [delay, setDelay] = useState(null);
   const [verifyCode, setVerifyCode] = useState("");
-  const userInfo = useContext(UserInfoContext);
+  const userInfo = useContext(Context);
   const isLandscape = useIsLandscape();
 
   useInterval(() => {

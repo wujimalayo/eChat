@@ -1,20 +1,21 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import styles from "./index.scss";
 import ChatInput from "components/ChatInput";
 import ChatContent from "components/ChatContent";
-import { UserInfoContext } from "src/store/context";
+import { Context } from "src/store/context";
 import useListenElementResize from "src/hooks/useListenElementResize";
 import Header from "src/components/Header";
+import { Message } from "src/interfaces/default";
 
-const Chat = ({ onHeightChange }) => {
-  const userInfo = useContext(UserInfoContext);
+const Chat = ({ onHeightChange = (height: number) => {} }) => {
+  const userInfo = useContext(Context);
   const contentRef = useRef(null);
-  const { _, height } = useListenElementResize(contentRef);
+  const { height } = useListenElementResize(contentRef);
   useEffect(() => {
     onHeightChange(height);
   }, [height]);
 
-  const [messageList, setMessageList] = useState([
+  const [messageList, setMessageList] = useState<Message[]>([
     {
       text: `Hi，欢迎使用Echat，下方是您的设备id`,
       type: "receive",
@@ -24,7 +25,7 @@ const Chat = ({ onHeightChange }) => {
       type: "receive",
     },
   ]);
-  const handleAdd = (msg) => {
+  const handleAdd = (msg: Message) => {
     setMessageList((list) => {
       list.push(msg);
       return [...list];
@@ -37,7 +38,7 @@ const Chat = ({ onHeightChange }) => {
       <div className={styles["header-blank"]}></div>
       <ChatContent messageList={messageList} />
       <div className={styles["bottom-blank"]}></div>
-      <ChatInput onAddMessage={(msg) => handleAdd(msg)} />
+      <ChatInput onAddMessage={(msg: Message) => handleAdd(msg)} />
     </div>
   );
 };

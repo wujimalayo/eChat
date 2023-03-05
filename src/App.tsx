@@ -4,22 +4,23 @@ import { useEffect, useState, useRef } from "react";
 import Chat from "pages/chat";
 import AppLoading from "components/AppLoading";
 import { useVisitorData } from "@fingerprintjs/fingerprintjs-pro-react";
-import { UserInfoContext } from "src/store/context";
+import { Context } from "src/store/context";
+import { UserInfo, UserInfoSetter } from "./interfaces/default";
 
 function App() {
   const { error, data } = useVisitorData();
 
-  const [userInfo, setUserInfo] = useState({
+  const [userInfo, setUserInfo] = useState<UserInfo>({
     phone: "",
     inviteCode: "",
     visitorId: "",
     chatNum: 0,
   });
 
-  const [loading, setLoading] = useState(true);
-  const [errorText, setErrorText] = useState("");
+  const [loading, setLoading] = useState<boolean>(true);
+  const [errorText, setErrorText] = useState<string>("");
   // 全局控制options是否弹出
-  const [optionsVisible, setOptionsVisible] = useState(false);
+  const [optionsVisible, setOptionsVisible] = useState<boolean>(false);
   const appRef = useRef<HTMLInputElement>(null);
 
   const resize = () => {
@@ -48,14 +49,9 @@ function App() {
     }
   }, [data, error]);
 
-  const handleUpdateUserInfo = (info: {
-    visitorId: string;
-    phone?: string;
-    inviteCode?: string;
-    chatNum?: number;
-  }) => {
-    setUserInfo((o) => ({
-      ...o,
+  const handleUpdateUserInfo = (info: UserInfoSetter) => {
+    setUserInfo((usr) => ({
+      ...usr,
       ...info,
     }));
   };
@@ -73,7 +69,7 @@ function App() {
   }
 
   return (
-    <UserInfoContext.Provider
+    <Context.Provider
       value={{
         ...userInfo,
         updateUserInfo: handleUpdateUserInfo,
@@ -84,7 +80,7 @@ function App() {
       <div ref={appRef} className="App">
         <Chat onHeightChange={handleHeightChange} />
       </div>
-    </UserInfoContext.Provider>
+    </Context.Provider>
   );
 }
 

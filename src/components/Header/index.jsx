@@ -4,11 +4,11 @@ import { bars_solid } from "src/assets/assetsCommonExports";
 import { Popup } from "antd-mobile";
 import Options from "../Options";
 import useIsLandscape from "src/hooks/useIsLandscape";
-import { UserInfoContext } from "src/store/context";
+import { Context } from "src/store/context";
 
 const Header = () => {
   const isLandscape = useIsLandscape();
-  const { optionsVisible, setOptionsVisible } = useContext(UserInfoContext);
+  const { optionsVisible, setOptionsVisible } = useContext(Context);
 
   return (
     <div className={styles.header}>
