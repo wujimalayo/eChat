@@ -5,7 +5,7 @@ import classNames from "classnames";
 import { sendnRecieve } from "src/service/api";
 import { Context } from "src/store/context";
 import PopupMessage from "../PopupMessage";
-import VConsole from "vconsole";
+// import VConsole from "vconsole";
 
 const ChatInput = ({ onAddMessage }) => {
   const userInfo = useContext(Context);
@@ -13,20 +13,23 @@ const ChatInput = ({ onAddMessage }) => {
   const [showPlaceholder, setShowPlaceholder] = useState(true);
   const inputRef = useRef(null);
   const loadingRef = useRef(null);
-  const vConsole = new VConsole({ theme: "dark" });
+  // const vConsole = new VConsole({ theme: "dark" });
 
   useEffect(() => {
-    addEventListener("keyup", (e) => {
-      console.log(e.code);
-    });
+    addEventListener("keydown", handleKeyUpListen);
 
     return () => {
-      removeEventListener("keyup", (e) => {
-        console.log(e);
-      });
-      vConsole.destroy();
+      removeEventListener("keydown", handleKeyUpListen);
+      // vConsole.destroy();
     };
   }, []);
+
+  const handleKeyUpListen = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      handleInputContent();
+    }
+  };
 
   useEffect(() => {
     if (loadingRef.current) {
@@ -109,7 +112,6 @@ const ChatInput = ({ onAddMessage }) => {
           在这里输入你想查询的内容噢~
         </div>
       )}
-
       <div
         ref={inputRef}
         className={classNames(styles.textarea)}
