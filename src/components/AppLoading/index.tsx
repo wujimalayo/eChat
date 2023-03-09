@@ -3,7 +3,11 @@ import { boot_avatar } from "src/assets/assetsCommonExports";
 import styles from "./loading.scss";
 import classNames from "classnames";
 
-export default ({ errorMsg }) => {
+interface Props {
+  errorMsg: string;
+}
+
+export default ({ errorMsg }: Props) => {
   const [show, setShow] = useState(false);
   useEffect(() => setShow(true), []);
   return (

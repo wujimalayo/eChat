@@ -13,17 +13,22 @@ import PopupMessage from "../PopupMessage";
 import { TOKEN_KEY } from "src/assets/constant";
 import useIsLandscape from "src/hooks/useIsLandscape";
 
-const Options = ({ open, visible }) => {
-  const swiperRef = useRef(null);
-  const inputRef = useRef(null);
-  const verifyRef = useRef(null);
-  const [isFocus, setIsFocus] = useState(false);
+interface Props {
+  open: () => void;
+  visible: boolean;
+}
+
+const Options = ({ open, visible }: Props) => {
+  const swiperRef = useRef<any>(null);
+  const inputRef = useRef<any>(null);
+  const verifyRef = useRef<any>(null);
+  const [isFocus, setIsFocus] = useState<boolean>(false);
   const [phone, setPhone] = useState("");
   const [isPhoneNumber, setIsPhoneNumber] = useState(false);
   const [loading, setLoading] = useState(false);
   const [verifyLoading, setVerifyLoading] = useState(false);
   const [countDown, setCountDown] = useState(60);
-  const [delay, setDelay] = useState(null);
+  const [delay, setDelay] = useState<number | null>(null);
   const [verifyCode, setVerifyCode] = useState("");
   const userInfo = useContext(Context);
   const isLandscape = useIsLandscape();
@@ -94,7 +99,7 @@ const Options = ({ open, visible }) => {
     });
   };
 
-  const showCopyRes = (isSuccess) => {
+  const showCopyRes = (isSuccess: boolean) => {
     isSuccess
       ? PopupMessage.success("复制成功")
       : PopupMessage.warning("复制失败，请长按屏幕手动复制");
@@ -146,6 +151,10 @@ const Options = ({ open, visible }) => {
     }
   };
 
+  const borderColorStyle = {
+    "--border-color": isFocus ? "#256371" : "#cccccc",
+  } as React.CSSProperties;
+
   return (
     <div
       className={classNames(
@@ -155,12 +164,7 @@ const Options = ({ open, visible }) => {
     >
       <Swiper indicator={() => null} allowTouchMove={false} ref={swiperRef}>
         <Swiper.Item>
-          <div
-            className={styles.content}
-            style={{
-              "--border-color": isFocus ? "#256371" : "#cccccc",
-            }}
-          >
+          <div className={styles.content} style={borderColorStyle}>
             <div
               className={classNames(globalStyles["border-text"], styles.title)}
             >
@@ -206,12 +210,7 @@ const Options = ({ open, visible }) => {
           </div>
         </Swiper.Item>
         <Swiper.Item>
-          <div
-            className={styles.content}
-            style={{
-              "--border-color": isFocus ? "#256371" : "#cccccc",
-            }}
-          >
+          <div className={styles.content} style={borderColorStyle}>
             <img
               className={styles.back}
               src={back}

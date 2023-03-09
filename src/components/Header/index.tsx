@@ -7,7 +7,7 @@ import useIsLandscape from "src/hooks/useIsLandscape";
 import { Context } from "src/store/context";
 
 const Header = () => {
-  const isLandscape = useIsLandscape();
+  const isLandscape: boolean = useIsLandscape();
   const { optionsVisible, setOptionsVisible } = useContext(Context);
 
   return (

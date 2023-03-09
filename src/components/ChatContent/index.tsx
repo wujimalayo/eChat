@@ -2,11 +2,16 @@ import { useRef, useEffect } from "react";
 import styles from "./index.scss";
 import Message from "./Message";
 import useListenElementResize from "src/hooks/useListenElementResize";
+import { Message as Msg } from "src/interfaces/default";
 
-const ChatContent = ({ messageList }) => {
-  const listRef = useRef(null);
-  const contentRef = useRef(null);
-  const { _, height } = useListenElementResize(listRef);
+interface Props {
+  messageList: Msg[];
+}
+
+const ChatContent = ({ messageList }: Props) => {
+  const listRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const { height } = useListenElementResize(listRef);
   useEffect(() => {
     contentRef.current &&
       contentRef.current.scrollTo({

@@ -20,8 +20,9 @@ interface GlobalContext extends UserInfo {
 }
 
 interface Message {
-  text: string;
-  type: "receive" | "send";
+  text: string; // 消息文本
+  type: "receive" | "send"; // 消息类型
+  code?: 0 | 1; // 状态码: 0 有效 1 错误
 }
 
 export { UserInfo, GlobalContext, UserInfoSetter, Message };

@@ -5,14 +5,18 @@ import classNames from "classnames";
 import { sendnRecieve } from "src/service/api";
 import { Context } from "src/store/context";
 import PopupMessage from "../PopupMessage";
+import { Message } from "src/interfaces/default";
 // import VConsole from "vconsole";
 
-const ChatInput = ({ onAddMessage }) => {
+interface Props {
+  onAddMessage: (msg: Message) => void;
+}
+
+const ChatInput = ({ onAddMessage }: Props) => {
   const userInfo = useContext(Context);
   const [loading, setLoading] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(true);
-  const inputRef = useRef(null);
-  const loadingRef = useRef(null);
+  const inputRef = useRef<HTMLDivElement>(null);
   // const vConsole = new VConsole({ theme: "dark" });
 
   useEffect(() => {
@@ -24,29 +28,21 @@ const ChatInput = ({ onAddMessage }) => {
     };
   }, []);
 
-  const handleKeyUpListen = (e) => {
+  const handleKeyUpListen = (e: any) => {
     if (e.keyCode === 13) {
       e.preventDefault();
       handleInputContent();
     }
   };
 
-  useEffect(() => {
-    if (loadingRef.current) {
-      loadingRef.current.style.animation = `animation: spin 1s infinite linear,${
-        loading ? "show" : "hidden"
-      } 1s linear forwards`;
-    }
-  }, [loading]);
-
-  const handleSend = async (text) => {
+  const handleSend = async (text: string) => {
     if (!text.trim().length) return;
     setLoading(true);
     onAddMessage({
       text: text,
       type: "send",
     });
-    inputRef.current.innerHTML = "";
+    inputRef.current && (inputRef.current.innerHTML = "");
     sendnRecieve({
       device_id: userInfo.visitorId,
       user_chat: text,
@@ -83,16 +79,21 @@ const ChatInput = ({ onAddMessage }) => {
     }
   };
 
-  const getText = (ele) => {
+  const getText = (ele: HTMLDivElement | null) => {
     let res = "";
-    Array.from(ele.childNodes).forEach((child) => {
-      if (child.nodeName === "#text") {
-        res += child.nodeValue;
-      }
-      if (child.hasChildNodes()) {
-        res += getText(child);
-      }
-    });
+    if (ele) {
+      Array.from(ele.childNodes as NodeListOf<HTMLDivElement>).forEach(
+        (child) => {
+          if (child.nodeName === "#text") {
+            res += child.nodeValue;
+          }
+          if (child.hasChildNodes()) {
+            res += getText(child);
+          }
+        }
+      );
+    }
+
     return res;
   };
 
